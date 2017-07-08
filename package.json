@@ -4,5 +4,13 @@
   "main": "index.js",
   "repository": "git@github.com:benfoxall/js-browser-bits.git",
   "author": "Ben Foxall <benfoxall@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "reveal.js": "^3.5.0",
+    "slide-builder": "^1.0.0",
+    "gulp": "^3.9.1"
+  },
+  "scripts": {
+    "postinstall": "gulp postinstall"
+  }
 }
