@@ -6,11 +6,20 @@
   "author": "Ben Foxall <benfoxall@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "@tweenjs/tween.js": "^16.8.0",
+    "gulp": "^3.9.1",
     "reveal.js": "^3.5.0",
-    "gulp": "^3.9.1"
+    "rollup-stream": "^1.21.0",
     "slide-builder": "^1.0.1",
+    "vinyl-source-stream": "^1.1.0"
   },
   "scripts": {
-    "postinstall": "gulp postinstall"
+    "postinstall": "gulp postinstall",
+    "watch": "rollup -c -w"
+  },
+  "devDependencies": {
+    "rollup-plugin-commonjs": "^8.0.2",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "rollup-watch": "^4.0.0"
   }
 }
