@@ -1,0 +1,8 @@
+{
+  "name": "js-browser-bits",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:benfoxall/js-browser-bits.git",
+  "author": "Ben Foxall <benfoxall@gmail.com>",
+  "license": "MIT"
+}
