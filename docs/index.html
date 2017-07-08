@@ -72,7 +72,106 @@
             <h3>Base 2</h3>
             <h1 class="output-bin mono" style="text-align:right">-</h1>
 
+            <!-- <h3>Base 8</h3>
+            <h1 class="output-oct mono" style="text-align:right">-</h1>
 
+            <h3>Base 16</h3>
+            <h1 class="output-hex mono" style="text-align:right">-</h1> -->
+          </section>
+
+          <section>
+            <h3>How to JavaScript</h3>
+          </section>
+
+          <section>
+            <h3>Literals</h3>
+            <h1><pre><code data-trim class="hljs javascript">
+              42 == 42
+              42 == 0b101010 //*es6
+              42 == 0o52
+              42 == 0x2a
+            </code></pre></h1>
+          </section>
+
+          <section>
+            <h3>Parsing</h3>
+            <h1><pre><code data-trim class="hljs javascript">
+              42 == parseInt('42',     10)
+              42 == parseInt('101010', 2)
+              42 == parseInt('52',     8)
+              42 == parseInt('2a',     16)
+            </code></pre></h1>
+          </section>
+
+          <section>
+            <h3>Outputting</h3>
+            <h1><pre><code data-trim class="hljs javascript">
+              (42).toString(10) == '42'
+              (42).toString(2)  == '101010'
+              (42).toString(8)  == '52'
+              (42).toString(16) == '2a'
+            </code></pre></h1>
+          </section>
+
+          <section>
+            <h2>Numbers are just numbers</h2>
+            <h1><pre><code data-trim class="hljs javascript">
+              Math.sqrt(
+                Math.pow(3, 0b10) +
+                Math.pow(0o4, 0x2)
+              )
+            </code></pre></h1>
+          </section>
+
+          <section>
+            <h2>But also, binary stuff.</h2>
+            <h1>OR, AND, NOT, …</h1>
+          </section>
+
+          <section>
+            <h1 class="head-up">AND ( &amp; )</h1>
+            <h1><pre><code data-trim class="hljs javascript">
+                 0b0000000011111111
+              &amp;  0b0000111111110000
+
+              == 0b0000000011110000
+            </code></pre></h1>
+          </section>
+
+          <section>
+            <h1 class="head-up">OR ( | )</h1>
+            <h1><pre><code data-trim class="hljs javascript">
+                 0b0000000011111111
+              |  0b0000111111110000
+
+              == 0b0000111111111111
+            </code></pre></h1>
+          </section>
+
+
+          <section>
+            <h1 class="head-up">NOT ( ~ )</h1>
+            <h1><pre><code data-trim class="hljs javascript" data-noescape>
+              ~  0b0000000011111111
+
+              == 0b1111111100000000
+
+              <span class="fragment">== -256</span>
+            </code></pre></h1>
+          </section>
+
+
+          <section>
+            <h1 class="head-up">Bit shifting ( << >> <<< )</h1>
+            <h1><pre><code data-trim class="hljs javascript" data-noescape>
+                 0b0000000011111111
+
+              << 1
+
+              == 0b0000000111111110
+
+              <span class="fragment">== -256</span>
+            </code></pre></h1>
           </section>
 
 

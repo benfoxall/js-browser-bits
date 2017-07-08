@@ -8,6 +8,10 @@
   box-shadow: none;
 }
 
+.reveal pre code{
+  font-weight: 100
+}
+
 .hljs {
   background: none;
 }
@@ -26,4 +30,8 @@ hr {
 .reveal section .mono {
   font-family: 'Roboto Mono', monospace;
   font-weight: 100;
+}
+
+.reveal section .head-up {
+  margin-bottom: 1em;
 }
