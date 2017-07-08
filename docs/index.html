@@ -22,11 +22,55 @@
           <h1>JavaScript <br />Browser Bits</h1>
           <h3>@BenjaminBenBen</h3>
         </section>
+
+        <section>
+          <section data-background="#eee">
+            <h2>I'm Ben</h2>
+          </section>
+          <section>
+            <h2>Freelance developer</h2>
+            <h4>based in Oxford</h4>
+          </section>
+          <section>
+            <h4>[relevant stuff]</h4>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>We're going to cover a lot</h2>
+          </section>
+          <!--section>
+            <h4>1. <span class="fragment">Struggle to learn something</span>
+            </h4>
+            <h4>2. <span class="fragment">Work it out</span>
+            </h4>
+            <h4>3. <span class="fragment">Assume everyone else knew it already</span>
+            </h4>
+          </section-->
+        </section>
+
+        <section>
+          <section data-background="#fff">
+            <h1>Bits</h1>
+          </section>
+
+          <section>
+            <h2>[hands]</h2>
+          </section>
+          <section id="count-dec">
+            <h1 class="count-value" style="text-align:right">-</h1>
+          </section>
+        </section>
+
       </div>
     </div>
 
     <script src="lib/reveal.js/lib/js/head.min.js"></script>
     <script src="lib/reveal.js/js/reveal.js"></script>
+    <script src="lib/slide-builder/slide-builder.js"></script>
+
+    <script src="lib/@tweenjs/tween.js/src/Tween.js"></script>
 
     <script>
 
@@ -46,7 +90,16 @@
           {
             src: 'lib/reveal.js/plugin/highlight/highlight.js',
             callback: function() { hljs.initHighlightingOnLoad() }
-          }
+          },
+
+          {
+           src: 'scripts/CountDecimal.js',
+           callback: () => {
+             setTimeout(() => {
+               new CountDecimal('#count-dec')
+             }, 100)
+           }
+         }
         ]
       })
 
