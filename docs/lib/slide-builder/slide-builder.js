@@ -21,14 +21,20 @@
   });
 
   Reveal.addEventListener( 'ready', function( event ) {
-    if(event.currentSlide)  event.currentSlide.dispatchEvent(shown);
     currentSlide = event.currentSlide;
   });
 
 
   function SlideBuilder(element){
     this.slide_el = element;
-    // this.fragment_els = [];
+
+    // if this is loaded dynamically, reveal might have loaded
+    // check to see if we're displayed
+    if(element === currentSlide) {
+      setTimeout(() =>{
+        element.dispatchEvent(shown)
+      }, 10)
+    }
   }
 
   // forward event listeners to slide element
@@ -36,11 +42,6 @@
     if( 'addEventListener' in window ) {
       this.slide_el.addEventListener( type, listener, useCapture );
     }
-
-    // re-fire slide shown events incase it was already loaded
-    // if(type == 'shown' && currentSlide == this.slide_el){
-    //   this.slide_el.dispatchEvent(shown);
-    // }
 
     return this;
   }
@@ -51,8 +52,6 @@
     el.className = 'fragment';
     el.innerText = text || '';
 
-    // el.addEventListener('shown', listener);
-    // el.addEventListener('hidden', hide_listener);
     this.slide_el.appendChild(el);
 
     return el;

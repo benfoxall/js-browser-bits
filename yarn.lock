@@ -923,9 +923,9 @@ sigmund@~1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/sigmund/-/sigmund-1.0.1.tgz#3ff21f198cad2175f9f3b781853fd94d0d19b590"
 
-slide-builder@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/slide-builder/-/slide-builder-1.0.0.tgz#505df12c3d3cd5415aad6f9031855021819615c2"
+slide-builder@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/slide-builder/-/slide-builder-1.0.1.tgz#2e504fad9db753e5715bec88031d436e675a3067"
 
 sparkles@^1.0.0:
   version "1.0.0"

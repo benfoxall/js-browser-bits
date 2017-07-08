@@ -7,8 +7,8 @@
   "license": "MIT",
   "dependencies": {
     "reveal.js": "^3.5.0",
-    "slide-builder": "^1.0.0",
     "gulp": "^3.9.1"
+    "slide-builder": "^1.0.1",
   },
   "scripts": {
     "postinstall": "gulp postinstall"
