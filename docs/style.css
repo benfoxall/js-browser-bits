@@ -22,3 +22,8 @@ hr {
   border: none;
   box-shadow: none;
 }
+
+.reveal section .mono {
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 100;
+}
