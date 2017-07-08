@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <title>JavaScript Browser Bits</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="lib/reveal.js/css/reveal.css">
+    <link rel="stylesheet" href="lib/reveal.js/css/theme/black.css">
+    <link rel="stylesheet" href="lib/reveal.js/lib/css/zenburn.css">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+
+    <div class="reveal">
+      <div class="slides">
+        <section data-background="#fff">
+          <h1>JavaScript <br />Browser Bits</h1>
+          <h3>@BenjaminBenBen</h3>
+        </section>
+      </div>
+    </div>
+
+    <script src="lib/reveal.js/lib/js/head.min.js"></script>
+    <script src="lib/reveal.js/js/reveal.js"></script>
+
+    <script>
+
+      Reveal.initialize({
+        controls: false,
+        progress: false,
+        history: true,
+        center: true,
+
+        // margin: 0,
+        width: 1280,
+        height: 720,
+
+        transition: 'slide',
+
+        dependencies: [
+          {
+            src: 'lib/reveal.js/plugin/highlight/highlight.js',
+            callback: function() { hljs.initHighlightingOnLoad() }
+          }
+        ]
+      })
+
+    </script>
+
+  </body>
+</html>

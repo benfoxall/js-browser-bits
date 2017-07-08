@@ -1,0 +1,24 @@
+.reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
+  font-family: 'Avenir', Helvetica-Neue, sans-serif;
+  text-transform: none;
+  text-align: left
+}
+
+.reveal pre {
+  box-shadow: none;
+}
+
+.hljs {
+  background: none;
+}
+
+hr {
+  border: none;
+  border-bottom: 1px solid #fff;
+}
+
+.reveal section img {
+  background: none;
+  border: none;
+  box-shadow: none;
+}
