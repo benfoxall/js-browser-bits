@@ -35,3 +35,9 @@ hr {
 .reveal section .head-up {
   margin-bottom: 1em;
 }
+
+
+[data-buffer-view] {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+}

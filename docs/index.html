@@ -161,19 +161,153 @@
           </section>
 
 
-          <section>
-            <h1 class="head-up">Bit shifting ( << >> <<< )</h1>
+          <section id="bit-shift">
+            <h1 class="head-up">Bit shifting ( << >> )</h1>
             <h1><pre><code data-trim class="hljs javascript" data-noescape>
                  0b0000000011111111
 
-              << 1
+              <span class="_operator">>> 4</span>
 
-              == 0b0000000111111110
-
-              <span class="fragment">== -256</span>
+              == 0b<span class="_value">0000000000001111</span>
             </code></pre></h1>
           </section>
 
+
+          <section>
+            <h1>In use</h1>
+          </section>
+
+          <section>
+            <h3><pre><code data-trim class="hljs javascript" data-noescape>
+              const FLAG_1 = 0b0001
+              const FLAG_2 = 0b0010
+              const FLAG_3 = 0b0100
+              const FLAG_4 = 0b1000
+
+              if(v &amp; FLAG_1) …
+              if(v &amp; FLAG_1 &amp;&amp; v &amp; FLAG_3) …
+
+              const v = FLAG_1 | FLAG_4
+            </code></pre></h3>
+          </section>
+
+          <section>
+            <h3><pre><code data-trim class="hljs javascript" data-noescape>
+              const floor = 3.145|0
+
+
+              if(~str.indexOf(word)) {
+                // doesn't contain word
+              }
+            </code></pre></h3>
+          </section>
+
+          <section>
+            <h3>Example task</h3>
+            <h4>CSS Hex to RGB</h4>
+          </section>
+
+          <!-- <section>
+
+            <h2><pre class="stretch"><code data-trim class="hljs javascript" data-noescape>
+              const colour = parseInt('bada55', 16)
+              // [r     ][g     ][b     ]
+              // 101110101101101001010101
+              const blue  = colour &amp; 0xff
+              // 01010101 (85)
+              const green = colour >> 8 &amp; 0xff
+              // 11011010 (218)
+              const red   = colour >> 16
+              // 10111010 (186)
+              `rgb(${red}, ${green}, ${blue})`
+              // rgb(186, 218, 85)
+            </code></pre></h2>
+          </section>
+
+           -->
+
+           <section>
+
+             <h2><pre class="stretch"><code data-trim class="hljs javascript" data-noescape>
+              const rgb = c =>
+                `rgb(${c>>16}, ${c>>8&amp;255}, ${c&amp;255})`
+
+              const from_hex = h =>
+                rgb(parseInt(h.slice(1), 16))
+
+              // from_hex('#123456') -> "rgb(18, 52, 86)"
+
+
+              <!-- const hex_to_rgb = hex =>
+                (c => `rgb(${c>>16}, ${c>>8&255}, ${c&255})`)
+                (parseInt(hex, 16)) -->
+
+             </code></pre></h2>
+           </section>
+        </section>
+
+        <section>
+          <section data-background="#fff">
+            <h1>Longer than 0xffffffff?</h1>
+            <p class="mono">
+              00010101010101010101010101010101010100001010101010
+              10101010101010101010101000010101010101010101010101
+              01010101010000101010101010101010101010101010101000
+              01010101010101010101010101010101010000101010101010
+              10101010101010101010101000010101010101010101010101
+              01010101010000101010101010101010101010101010101000
+              01010101010101010101010102<!-- lol -->010101010000101010101010
+              10101010101010101010101000010101010101010101010101
+              01010101010000101010101010101010101010101010101000
+              01010101010101010101010101010101010000101010101010
+              01010101010101010101010101010101010000101010101010
+              10101010101010101010101000010101010101010101010101
+              01010101010000101010101010101010101010101010101000
+              01010101010101010101010101010101010000101010101010
+            </p>
+          </section>
+          <section>
+            <h1>Array Buffers</h1>
+            <!-- <p class="mono">
+              00010101010101010101010101010101010100001010101010
+              10101010101010101010101000010101010101010101010101
+              01010101010000101010101010101010101010101010101000
+              01010101010101010101010101010101010000101010101010
+            </p> -->
+          </section>
+
+          <section>
+            <h1>Typed Arrays</h1>
+            <h3>
+              Int8Array,
+              Uint8Array,
+              Uint8ClampedArray,
+              Int16Array,
+              Uint16Array,
+              Int32Array,
+              Uint32Array,
+              Float32Array,
+              Float64Array
+            </h3>
+          </section>
+
+          <section>
+            <h2>t_array = new Uint8Array(48)</h2>
+            <h2>buffer = t_array.buffer</h2>
+
+            <div data-buffer-view="buffer" class="mono">
+            </div>
+
+            <!-- <p class="mono">
+              00010101010101010101010101010101010100001010101010
+              10101010101010101010101000010101010101010101010101
+              01010101010000101010101010101010101010101010101000
+              01010101010101010101010101010101010000101010101010
+            </p> -->
+          </section>
+
+          <section>
+          </section>
 
         </section>
 
@@ -206,6 +340,8 @@
             callback: function() { hljs.initHighlightingOnLoad() }
           },
 
+          {src: 'scripts/bufferView.js'},
+
           {
            src: 'scripts/CountDecimal.js',
            callback: () => {
@@ -213,7 +349,16 @@
                new CountDecimal('#count-dec')
              }, 100)
            }
-         }
+         },
+
+         {
+          src: 'scripts/BitShift.js',
+          callback: () => {
+            setTimeout(() => {
+              new BitShift('#bit-shift')
+            }, 100)
+          }
+        }
         ]
       })
 
