@@ -62,5 +62,35 @@
   )
 
 
+  const freqSlideGraph = document.querySelector('#audio-freq-graph')
+  const canvasElement = freqSlideGraph.querySelector('canvas')
+
+  let ctx
+
+  createAudioSlide(
+    freqSlideGraph,
+    (analyser) => {
+      freqData = new Uint8Array(analyser.frequencyBinCount)
+
+      ctx = canvasElement.getContext('2d')
+      ctx.resetTransform()
+      ctx.scale(canvasElement.width / freqData.length, canvasElement.height / 255)
+      ctx.strokeStyle = '#fff'
+    },
+    (analyser) => {
+      analyser.getByteFrequencyData(freqData)
+
+      ctx.clearRect(0,0,freqData.length,255)
+
+      ctx.beginPath()
+      freqData.forEach((value, i) => {
+        ctx.lineTo(i, 255-value)
+      })
+      ctx.stroke()
+
+    }
+  )
+
+
 
 })(window.Reveal, window.SlideBuilder)

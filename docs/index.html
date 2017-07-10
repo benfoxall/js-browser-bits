@@ -495,7 +495,10 @@
 
                 analyser.getByteTimeDomainData(timeData)
 
+
                 ctx.clearRect(0,0,timeData.length,255)
+                
+                ctx.beginPath()
                 timeData.forEach((value, i) => {
                   ctx.lineTo(i, value)
                 })
@@ -505,12 +508,11 @@
             </code></pre>
           </section>
 
-          <section id="audio-freq-canvas">
+          <section id="audio-freq-graph">
             <h2>Frequency Data</h2>
             <p><audio src="assets/bach.ogg" controls ></audio></p>
 
-            <p class="mono">[canvas]</p>
-            <canvas></canvas>
+            <canvas width=1280 height=300></canvas>
           </section>
 
 
