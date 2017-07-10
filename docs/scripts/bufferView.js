@@ -33,7 +33,7 @@
         // console.log(window[bufferName])
 
 
-        const target = window[bufferName]
+        const target = window[bufferName] && window[bufferName]
 
         if(target && target instanceof ArrayBuffer) {
 

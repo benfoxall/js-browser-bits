@@ -243,12 +243,19 @@
                 (parseInt(hex, 16)) -->
 
              </code></pre></h2>
+
+             <p style="text-align:right">*</p>
+           </section>
+
+           <section>
+             <h6><small>* it's not <em>quite</em> that simple</small></h6>
            </section>
         </section>
 
         <section>
           <section data-background="#fff">
-            <h1>Longer than 0xffffffff?</h1>
+            <h1>Handling bigger things</h1>
+            <!-- <h1>Longer than a number?</h1> -->
             <p class="mono">
               00010101010101010101010101010101010100001010101010
               10101010101010101010101000010101010101010101010101
@@ -267,17 +274,9 @@
             </p>
           </section>
           <section>
-            <h1>Array Buffers</h1>
-            <!-- <p class="mono">
-              00010101010101010101010101010101010100001010101010
-              10101010101010101010101000010101010101010101010101
-              01010101010000101010101010101010101010101010101000
-              01010101010101010101010101010101010000101010101010
-            </p> -->
+            <h1>Split it up into numbers</h1>
           </section>
-
           <section>
-            <h1>Typed Arrays</h1>
             <h3>
               Int8Array,
               Uint8Array,
@@ -292,24 +291,155 @@
           </section>
 
           <section>
-            <h2>t_array = new Uint8Array(48)</h2>
-            <h2>buffer = t_array.buffer</h2>
-
-            <div data-buffer-view="buffer" class="mono">
-            </div>
-
-            <!-- <p class="mono">
-              00010101010101010101010101010101010100001010101010
-              10101010101010101010101000010101010101010101010101
-              01010101010000101010101010101010101010101010101000
-              01010101010101010101010101010101010000101010101010
-            </p> -->
+            <h2>u8 = new Uint8Array(48)</h2>
           </section>
 
           <section>
+
+            <h4>buffer = u8.buffer</h4>
+
+            <div data-buffer-view="buffer" class="mono"></div>
+
+            <h4>
+              todo:
+            </h4>
+            <ul>
+              <li>u8_2 = new Uint8Array(u8.buffer, 6, 6)</li>
+              <li>u32 = new Uint32Array(u8.buffer)</li>
+              <li>dv = new DataView(buffer)</li>
+            </ul>
+
+          </section>
+
+          <section>
+            <h1>Structured buffer views</h1>
+            <ul>
+              <li>travesing large datasets</li>
+              <li>rapidly changing data</li>
+              <li>minimising transfer</li>
+              <li>constrained memory</li>
+              <li>tracking an object through a scene</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>protobuffers</h2>
+            <h2>flatbuffers</h2>
+          </section>
+
+          <section>
+            <h1>/</h1>
+            <h2>Array Buffers</h2>
+            <h2>Typed Arrays</h2>
+            <h2>DataViews</h2>
+          </section>
+        </section>
+
+        <section>
+          <section data-background="#fff">
+            <h1>Let's do some stuff</h1>
+          </section>
+        </section>
+
+        <section>
+          <section data-background="#fff">
+            <h1>Image manipulation</h1>
+          </section>
+          <section>
+            <pre style="margin:0"><code>&lt;img src="joanie.jpg" /&gt;</code></pre>
+            <div class="img-row stretch">
+              <img src="images/imagedata-joanie.jpg">
+            </div>
+          </section>
+
+          <section>
+            <pre style="margin:0"><code data-trim class="hljs javascript">
+              const {width, height} = image
+
+              const canvas = document.createElement('canvas')
+              canvas.width = width
+              canvas.height = height
+
+              const ctx = canvas.getContext('2d')
+
+              ctx.drawImage(image, 0, 0, width, height)
+
+              const imageData = ctx.getImageData(0, 0, width, height)
+            </code></pre>
+          </section>
+
+          <section>
+            <h3><pre style="margin:0"><code data-trim class="hljs javascript">
+              {
+                width: 500,
+                height: 500,
+                data: [ r, g, b, a, … ] // 1M
+              }
+            </code></pre></h3>
+          </section>
+
+          <section>
+            <h1>[00101010101010101]</h1>
+          </section>
+
+          <section>
+            <pre style="margin:0"><code data-trim>
+              ctx.putImageData(imageData, 0, 0)
+            </code></pre>
+          </section>
+
+          <section class="image-data-code">
+            <div class="img-row stretch">
+              <img src="images/imagedata-joanie.jpg">
+              <pre style="margin:.5em"><code data-trim contenteditable class="hljs javascript">
+                const {data} = imageData
+
+                for(let i = 0; i < data.length; i += 4) {
+                  data[i] = 0
+                }
+
+                ctx.putImageData(imageData, 0, 0)
+              </code></pre>
+            </div>
+          </section>
+
+          <section class="image-data-code">
+            <div class="img-row stretch">
+              <img src="images/imagedata-joanie.jpg">
+              <pre style="margin:.5em"><code data-trim contenteditable class="hljs javascript">
+                const data = new Uint32Array(
+                  imageData.data.buffer
+                )
+
+                const r = 0x000000ff
+                const g = 0x0000ff00
+                const b = 0x00ff0000
+                const a = 0xff000000
+
+
+                for(let i = 0; i < data.length; i++) {
+                  data[i] = data[i] & r | a
+                }
+
+                // data.fill(0xffcc00ff)
+
+                // const m = 0xff
+                //data.sort((a, b) => (a & m) - (b & m) )
+
+
+                ctx.putImageData(imageData, 0, 0)
+              </code></pre>
+            </div>
+          </section>
+
+          <section>
+            <h1>/</h1>
+            <h2>Canvas2D</h2>
+            <h2>ImageData</h2>
           </section>
 
         </section>
+
 
       </div>
     </div>
@@ -344,21 +474,28 @@
 
           {
            src: 'scripts/CountDecimal.js',
-           callback: () => {
-             setTimeout(() => {
+             callback: () => {
                new CountDecimal('#count-dec')
-             }, 100)
-           }
-         },
+             }
+           },
 
-         {
-          src: 'scripts/BitShift.js',
-          callback: () => {
-            setTimeout(() => {
-              new BitShift('#bit-shift')
-            }, 100)
+          {
+            src: 'scripts/BitShift.js',
+            callback: () => {
+                new BitShift('#bit-shift')
+            }
+          },
+
+          {
+            src: 'scripts/imageDataCode.js',
+            callback: () => {
+              for(let slide of document.querySelectorAll('.image-data-code')) {
+                new ImageDataCode(slide)
+              }
+            }
           }
-        }
+
+
         ]
       })
 

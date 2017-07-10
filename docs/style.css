@@ -1,4 +1,4 @@
-.reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
+.reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6, p {
   font-family: 'Avenir', Helvetica-Neue, sans-serif;
   text-transform: none;
   text-align: left
@@ -40,4 +40,9 @@ hr {
 [data-buffer-view] {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.img-row {
+  display: flex;
+
 }
