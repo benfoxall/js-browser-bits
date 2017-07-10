@@ -354,7 +354,7 @@
 
           <section>
             <pre style="margin:0"><code data-trim class="hljs javascript">
-              const {width, height} = image
+              const {width, height} = image_element
 
               const canvas = document.createElement('canvas')
               canvas.width = width
@@ -362,7 +362,7 @@
 
               const ctx = canvas.getContext('2d')
 
-              ctx.drawImage(image, 0, 0, width, height)
+              ctx.drawImage(image_element, 0, 0, width, height)
 
               const imageData = ctx.getImageData(0, 0, width, height)
             </code></pre>
@@ -434,9 +434,86 @@
 
           <section>
             <h1>/</h1>
-            <h2>Canvas2D</h2>
-            <h2>ImageData</h2>
+            <h2>Images</h2>
+            <h3>Canvas2D, ImageData</h3>
           </section>
+
+        </section>
+
+
+        <section>
+          <section data-background="#fff">
+            <h1>Audio</h1>
+          </section>
+          <section>
+            <pre style="margin:0"><code>&lt;audio src="bach.ogg" controls /&gt;</code></pre>
+            <div class="img-row stretch">
+              <audio src="assets/bach.ogg" controls>
+            </div>
+          </section>
+          <section>
+            <h1>Web Audio</h1>
+            <h3>Graph</h3>
+          </section>
+          <section>
+            <pre style="margin:0"><code data-trim class="hljs javascript">
+              const ctx = new AudioContext()
+
+              const source = ctx.createMediaElementSource(audio_element)
+              const analyser = audioCtx.createAnalyser()
+
+              source.connect(analyser)
+              analyser.connect(ctx.destination)
+            </code></pre>
+          </section>
+
+          <section>
+            <pre style="margin:0"><code data-trim class="hljs javascript">
+
+              const timeData = new Uint8Array(analyser.fftSize)
+              analyser.getByteTimeDomainData(timeData)
+
+              var freqData = new Uint8Array(analyser.frequencyBinCount)
+              analyser.getByteFrequencyData(freqData)
+
+            </code></pre>
+          </section>
+
+          <section id="audio-freq-data">
+            <h2>Frequency Data</h2>
+            <p><audio src="assets/bach.ogg" controls ></audio></p>
+            <p class="mono output">[]</p>
+          </section>
+
+          <section>
+            <pre style="margin:0"><code data-trim class="hljs javascript">
+              const ctx = canvas.getContext('2d')
+              ctx.scale(canvas.width / timeData.length, canvas.height / 255)
+
+              const draw = () => {
+                requestAnimationFrame(draw)
+
+                analyser.getByteTimeDomainData(timeData)
+
+                ctx.clearRect(0,0,timeData.length,255)
+                timeData.forEach((value, i) => {
+                  ctx.lineTo(i, value)
+                })
+                ctx.stroke()
+              }
+              draw()
+            </code></pre>
+          </section>
+
+          <section id="audio-freq-canvas">
+            <h2>Frequency Data</h2>
+            <p><audio src="assets/bach.ogg" controls ></audio></p>
+
+            <p class="mono">[canvas]</p>
+            <canvas></canvas>
+          </section>
+
+
 
         </section>
 
@@ -493,6 +570,10 @@
                 new ImageDataCode(slide)
               }
             }
+          },
+
+          {
+            src: 'scripts/web-audio.js'
           }
 
 
