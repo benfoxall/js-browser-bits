@@ -46,3 +46,34 @@ hr {
   display: flex;
 
 }
+
+
+.reveal section.frag-collapse .fragment{
+    display:none
+}
+.reveal section.frag-collapse .fragment.visible{
+    display:inline;
+}
+
+
+/* just because */
+.reveal section.audio-data-code button {
+  margin-top: 1em;
+  font-size: 10vmin;
+  background: inherit;
+  color: #fff;
+  padding: 0.7em;
+  border: none;
+  box-shadow: #aaa -2px 2px 2.5px;
+  border-radius: 100%;
+  width: 2.5em;
+  height: 2.5em;
+  transition: .5s;
+  cursor: pointer;
+  outline:none;
+  transform: scale(0.75)
+}
+
+.reveal section.audio-data-code button:hover {
+  box-shadow: #aaa 2px 2px 2.5px;
+}

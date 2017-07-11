@@ -20,11 +20,11 @@
       source.connect(analyser)
       analyser.connect(audioCtx.destination)
 
-      setup(analyser)
+      setup(analyser, audio_element)
 
       function animate(t) {
         rAF = requestAnimationFrame(animate)
-        render(analyser)
+        render(analyser, audio_element)
       }
       rAF = requestAnimationFrame(animate)
     })
@@ -146,6 +146,109 @@
 
     }
   )
+
+
+
+
+
+
+    const spectrographSlide = document.querySelector('#audio-spectrograph')
+    const spectrographCanvas = spectrographSlide.querySelector('canvas')
+
+    let imageData, idx
+    let fdc
+
+    createAudioSlide(
+      spectrographSlide,
+      (analyser, audio_element) => {
+        freqData = new Uint8Array(analyser.frequencyBinCount)
+        fdc = new Uint8ClampedArray(freqData.buffer)
+
+        ctx = spectrographCanvas.getContext('2d')
+
+        imageData = ctx.createImageData(
+          freqData.length/4,
+          spectrographCanvas.height
+        )
+
+        idx = 0
+
+        ctx.strokeStyle = '#fff'
+
+      },
+      (analyser, audio_element) => {
+        if(audio_element.paused) return
+
+        analyser.getByteFrequencyData(freqData)
+
+        // for (var i = 0; i < fdc.length; i += 4) {
+        //   fdc[i]   = -Math.sin((fdc[i  ]/255) * Math.PI * 1.75) * 255
+        //   fdc[i+1] =  Math.sin((fdc[i+1]/255) * Math.PI * 1.75) * 255
+        //   fdc[i+2] = -Math.cos((fdc[i+2]/255) * Math.PI * 1.75) * 255
+        // }
+
+        imageData.data.set(
+          freqData,
+          idx * freqData.length
+        )
+
+        idx = (idx + 1) % spectrographCanvas.height
+
+        ctx.putImageData(imageData,0,0)
+
+      }
+    )
+
+
+
+
+
+    const spectrographColorSlide = document.querySelector('#audio-spectrograph-color')
+    const spectrographCanvasColor = spectrographColorSlide.querySelector('canvas')
+
+    // let imageData, idx
+    // let fdc
+
+    createAudioSlide(
+      spectrographColorSlide,
+      (analyser, audio_element) => {
+        freqData = new Uint8Array(analyser.frequencyBinCount)
+        fdc = new Uint8ClampedArray(freqData.buffer)
+
+        ctx = spectrographCanvasColor.getContext('2d')
+
+        imageData = ctx.createImageData(
+          freqData.length/4,
+          spectrographCanvasColor.height
+        )
+
+        idx = 0
+
+        ctx.strokeStyle = '#fff'
+
+      },
+      (analyser, audio_element) => {
+        if(audio_element.paused) return
+
+        analyser.getByteFrequencyData(freqData)
+
+        for (var i = 0; i < fdc.length; i += 4) {
+          fdc[i]   = -Math.sin((fdc[i  ]/255) * Math.PI * 1.75) * 255
+          fdc[i+1] =  Math.sin((fdc[i+1]/255) * Math.PI * 1.75) * 255
+          fdc[i+2] = -Math.cos((fdc[i+2]/255) * Math.PI * 1.75) * 255
+        }
+
+        imageData.data.set(
+          freqData,
+          idx * freqData.length
+        )
+
+        idx = (idx + 1) % spectrographCanvasColor.height
+
+        ctx.putImageData(imageData,0,0)
+
+      }
+    )
 
 
 

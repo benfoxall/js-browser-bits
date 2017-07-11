@@ -41,7 +41,7 @@ window.CountDecimal = (function(Reveal, SlideBuilder) {
       },
       () => {
         new TWEEN.Tween(value)
-          .to({ dec: 99999999}, 10000)
+          .to({ dec: 1234567890}, 10000)
           .onUpdate(function() {
             decElement.innerText = value.dec|0
           })
@@ -59,7 +59,7 @@ window.CountDecimal = (function(Reveal, SlideBuilder) {
       },
       () => {
         new TWEEN.Tween(value)
-          .to({ bin: 0b1111111111111111}, 10000)
+          .to({ bin: 0b1111100000}, 10000)
           .onUpdate(function() {
             binElement.innerText = (value.bin|0).toString(2)
           })

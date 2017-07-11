@@ -65,31 +65,41 @@
             <h4>Binary (base 2)</h4>
           </section>
 
-          <section id="count-dec">
+          <!-- <section id="count-dec">
             <h3>Base 10</h3>
             <h1 class="output-dec mono" style="text-align:right">-</h1>
 
             <h3>Base 2</h3>
             <h1 class="output-bin mono" style="text-align:right">-</h1>
+          </section> -->
 
-            <!-- <h3>Base 8</h3>
-            <h1 class="output-oct mono" style="text-align:right">-</h1>
+          <section class="frag-collapse">
+
+            <h3>Base 10</h3>
+            <h3 class="output-dec mono" style="text-align:right">42</h3>
+
+            <h3>Base 2</h3>
+            <h3 class="output-bin mono" style="text-align:right">00101010</h3>
+
+            <h3>Base 8</h3>
+            <h3 class="output-oct mono" style="text-align:right">52</h3>
 
             <h3>Base 16</h3>
-            <h1 class="output-hex mono" style="text-align:right">-</h1> -->
+            <h3 class="output-hex mono" style="text-align:right">2a</h3>
           </section>
 
           <section>
             <h3>How to JavaScript</h3>
           </section>
 
+
           <section>
-            <h3>Literals</h3>
+            <h3>Outputting</h3>
             <h1><pre><code data-trim class="hljs javascript">
-              42 == 42
-              42 == 0b101010 //*es6
-              42 == 0o52
-              42 == 0x2a
+              (42).toString(10) == '42'
+              (42).toString(2)  == '101010'
+              (42).toString(8)  == '52'
+              (42).toString(16) == '2a'
             </code></pre></h1>
           </section>
 
@@ -104,17 +114,22 @@
           </section>
 
           <section>
-            <h3>Outputting</h3>
+            <h3>Integer Literals</h3>
             <h1><pre><code data-trim class="hljs javascript">
-              (42).toString(10) == '42'
-              (42).toString(2)  == '101010'
-              (42).toString(8)  == '52'
-              (42).toString(16) == '2a'
+              42 == 42
+              42 == 0b101010 //*es6
+              42 == 0o52
+              42 == 0x2a
             </code></pre></h1>
           </section>
 
+
           <section>
-            <h2>Numbers are just numbers</h2>
+            <h1>What can we do now?</h1>
+          </section>
+
+          <section>
+            <h2>Numbers are numbers</h2>
             <h1><pre><code data-trim class="hljs javascript">
               Math.sqrt(
                 Math.pow(3, 0b10) +
@@ -124,12 +139,26 @@
           </section>
 
           <section>
-            <h2>But also, binary stuff.</h2>
-            <h1>OR, AND, NOT, …</h1>
+            <h2>But also, other stuff.</h2>
+            <h1 class="fragment">OR, AND, NOT, …</h1>
           </section>
 
           <section>
-            <h1 class="head-up">AND ( &amp; )</h1>
+            <h1><pre><code data-trim class="hljs javascript" data-noescape>
+                    011<span class="fragment">00101010101</span>
+                AND 101<span class="fragment">10001010111</span>
+
+                =   001<span class="fragment">00001010101</span>
+            </code></pre></h1>
+          </section>
+
+          <section>
+            <h1>Bitwise operators</h1>
+            <h1>&amp; | ~ << >></h1>
+          </section>
+
+          <section>
+            <h1 class="head-up">&amp; (AND)</h1>
             <h1><pre><code data-trim class="hljs javascript">
                  0b0000000011111111
               &amp;  0b0000111111110000
@@ -139,7 +168,7 @@
           </section>
 
           <section>
-            <h1 class="head-up">OR ( | )</h1>
+            <h1 class="head-up">| (OR)</h1>
             <h1><pre><code data-trim class="hljs javascript">
                  0b0000000011111111
               |  0b0000111111110000
@@ -150,7 +179,7 @@
 
 
           <section>
-            <h1 class="head-up">NOT ( ~ )</h1>
+            <h1 class="head-up">~ (NOT)</h1>
             <h1><pre><code data-trim class="hljs javascript" data-noescape>
               ~  0b0000000011111111
 
@@ -162,7 +191,8 @@
 
 
           <section id="bit-shift">
-            <h1 class="head-up">Bit shifting ( << >> )</h1>
+            <h1 class="head-up"> <<,  >> (Bit shifting)</h1>
+
             <h1><pre><code data-trim class="hljs javascript" data-noescape>
                  0b0000000011111111
 
@@ -184,10 +214,13 @@
               const FLAG_3 = 0b0100
               const FLAG_4 = 0b1000
 
+
+              const v = FLAG_1 | FLAG_4
+
+
               if(v &amp; FLAG_1) …
               if(v &amp; FLAG_1 &amp;&amp; v &amp; FLAG_3) …
 
-              const v = FLAG_1 | FLAG_4
             </code></pre></h3>
           </section>
 
@@ -203,8 +236,10 @@
           </section>
 
           <section>
-            <h3>Example task</h3>
-            <h4>CSS Hex to RGB</h4>
+            <h3>Implementing functions</h3>
+            <h2>
+              <pre><code>hex_to_rgb('#abcdef') == 'rgb(11, 205, 239)'</code></pre>
+            </h2>
           </section>
 
           <!-- <section>
@@ -228,33 +263,39 @@
 
            <section>
 
-             <h2><pre class="stretch"><code data-trim class="hljs javascript" data-noescape>
-              const rgb = c =>
-                `rgb(${c>>16}, ${c>>8&amp;255}, ${c&amp;255})`
+             <h3><pre class="stretch"><code data-trim class="hljs javascript" data-noescape>
+              // '#abcdef'
 
-              const from_hex = h =>
-                rgb(parseInt(h.slice(1), 16))
+              <span class="fragment">const from_hex =
+                s => parseInt(s.slice(1), 16)</span>
 
-              // from_hex('#123456') -> "rgb(18, 52, 86)"
+              <span class="fragment">const to_rgb =
+                c => `rgb(${c>>16}, ${c>>8&amp;255}, ${c&amp;255})`</span>
 
+              <span class="fragment">const hex_to_rgb =
+                h => to_rgb(from_hex(h))</span>
+             </code></pre></h3>
 
-              <!-- const hex_to_rgb = hex =>
-                (c => `rgb(${c>>16}, ${c>>8&255}, ${c&255})`)
-                (parseInt(hex, 16)) -->
-
-             </code></pre></h2>
-
-             <p style="text-align:right">*</p>
+             <p style="text-align:right" class="fragment">*</p>
            </section>
 
            <section>
-             <h6><small>* it's not <em>quite</em> that simple</small></h6>
+             <h6><small>* it's not always <em>quite</em> that simple</small></h6>
+           </section>
+
+           <section>
+             <h1>/</h1>
+             <h2>Bits</h2>
+             <h2>Numbers</h2>
+             <h2>Binary operators</h2>
            </section>
         </section>
 
         <section>
           <section data-background="#fff">
             <h1>Handling bigger things</h1>
+          </section>
+          <section>
             <!-- <h1>Longer than a number?</h1> -->
             <p class="mono">
               00010101010101010101010101010101010100001010101010
@@ -291,11 +332,11 @@
           </section>
 
           <section>
-            <h2>u8 = new Uint8Array(48)</h2>
+            <h2>ArrayBuffers</h2>
           </section>
 
           <section>
-
+            <h4>u8 = new Uint8Array(48)</h4>
             <h4>buffer = u8.buffer</h4>
 
             <div data-buffer-view="buffer" class="mono"></div>
@@ -312,7 +353,17 @@
           </section>
 
           <section>
-            <h1>Structured buffer views</h1>
+            <h1>memory impact</h1>
+            <h3>[..]</h3>
+          </section>
+
+          <section>
+            <h1>Updating multiple elements</h1>
+            <h3>[..]</h3>
+          </section>
+
+          <section>
+            <h1>Buffer backed objects</h1>
             <ul>
               <li>travesing large datasets</li>
               <li>rapidly changing data</li>
@@ -323,6 +374,7 @@
           </section>
 
           <section>
+            <h1>Serialisation &amp; transfer</h1>
             <h2>protobuffers</h2>
             <h2>flatbuffers</h2>
           </section>
@@ -343,13 +395,17 @@
 
         <section>
           <section data-background="#fff">
-            <h1>Image manipulation</h1>
+            <h1>Images</h1>
           </section>
           <section>
             <pre style="margin:0"><code>&lt;img src="joanie.jpg" /&gt;</code></pre>
             <div class="img-row stretch">
               <img src="images/imagedata-joanie.jpg">
             </div>
+          </section>
+
+          <section>
+            <h3>joanie.jpg &rarr; Raw pixel values</h3>
           </section>
 
           <section>
@@ -452,6 +508,9 @@
             </div>
           </section>
           <section>
+            <h3>bach.ogg &rarr; Raw audio data</h3>
+          </section>
+          <section>
             <h1>Web Audio</h1>
             <h3>Graph</h3>
           </section>
@@ -529,8 +588,106 @@
           </section>
 
 
+          <section>
+            <h1>Generating Audio</h1>
+          </section>
+
+          <section>
+            <h1>BufferSourceNode</h1>
+          </section>
+
+          <section>
+            <pre style="margin:0"><code data-trim class="hljs javascript">
+            const ctx = new AudioContext()
+
+            const audio_buffer = ctx.createBuffer(
+              1, ctx.sampleRate, ctx.sampleRate
+            )
+
+            const channel_data = audio_buffer.getChannelData(0) // Float32Array!
+            </code></pre>
+          </section>
+
+          <section>
+            <pre style="margin:0"><code data-trim class="hljs javascript">
+            for(let t in channel_data)
+              channel_data[t] = -1…1
+            </code></pre>
+          </section>
+
+          <section>
+            <pre style="margin:0"><code data-trim class="hljs javascript">
+            const source = ctx.createBufferSource()
+            source.buffer = audio_buffer
+            source.connect(ctx.destination)
+            source.start()
+            </code></pre>
+          </section>
+
+
+          <section class="audio-data-code">
+            <h2><pre style="margin:0"><code data-trim class="hljs javascript" contenteditable>
+              for(let t in channel_data)
+                channel_data[t] = Math.random()*2 -1
+            </code></pre></h2>
+            <p>
+              <button>&rarr;</button>
+            </p>
+          </section>
+
+
 
         </section>
+
+
+        <section>
+          <section data-background="#fff">
+            <h1>Mixing stuff together</h1>
+          </section>
+        </section>
+
+        <section>
+          <section data-background="#fff">
+            <h1>Audio FFT &rarr; ImageData?</h1>
+          </section>
+
+          <section>
+            <p class="mono">[f, f, f, f, f, f, f, f, …]</p>
+            <p class="mono">[r, g, b, a, r, g, b, a, …]</p>
+          </section>
+
+          <section>
+            <h1>Not a perfect fit, but whatever</h1>
+          </section>
+
+          <section id="audio-spectrograph">
+            <p><audio src="assets/bach.ogg" controls ></audio></p>
+            <canvas width=256 height=1280 style="transform:rotate(-90deg) translate(350px, 0) scale(2.5,1)"></canvas>
+          </section>
+
+          <section>
+            <h1>Colour mapping</h1>
+          </section>
+
+          <section id="audio-spectrograph-color">
+            <p><audio src="assets/bach.ogg" controls ></audio></p>
+            <canvas width=256 height=1280 style="transform:rotate(-90deg) translate(350px, 0) scale(2.5,1)"></canvas>
+          </section>
+
+        </section>
+
+
+        <section>
+          <section data-background="#fff">
+            <h1>Remote Data</h1>
+          </section>
+
+          <section>
+            <p>[nexmo]</p>
+          </section>
+
+        </section>
+
 
 
       </div>
@@ -564,17 +721,20 @@
 
           {src: 'scripts/bufferView.js'},
 
-          {
-           src: 'scripts/CountDecimal.js',
-             callback: () => {
-               new CountDecimal('#count-dec')
-             }
-           },
+          // {
+          //  src: 'scripts/CountDecimal.js',
+          //    callback: () => {
+          //      new CountDecimal('#count-dec')
+          //    }
+          //  },
 
           {
             src: 'scripts/BitShift.js',
             callback: () => {
+              setTimeout(() =>{
                 new BitShift('#bit-shift')
+              }, 100)
+
             }
           },
 
@@ -586,6 +746,17 @@
               }
             }
           },
+
+          {
+            src: 'scripts/audioDataCode.js',
+            callback: () => {
+              for(let slide of document.querySelectorAll('.audio-data-code')) {
+                new AudioDataCode(slide)
+              }
+            }
+          },
+
+
 
           {
             src: 'scripts/web-audio.js'
