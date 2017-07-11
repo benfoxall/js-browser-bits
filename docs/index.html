@@ -648,16 +648,51 @@
 
         <section>
           <section data-background="#fff">
-            <h1>Audio FFT &rarr; ImageData?</h1>
+            <h1>Frequency &rarr; Image?</h1>
           </section>
 
           <section>
-            <p class="mono">[f, f, f, f, f, f, f, f, …]</p>
-            <p class="mono">[r, g, b, a, r, g, b, a, …]</p>
+            <h2>Matching data?</h2>
+            <h3>analyser.getByteFrequencyData()</h3>
+            <h3>imageData.data</h3>
           </section>
 
           <section>
-            <h1>Not a perfect fit, but whatever</h1>
+            <p>Uint8Array <span class="fragment mono">[F F F F F F F F F F F F F F F F …]</span></p>
+            <p>Uint8Array <span class="fragment mono">[R G B A R G B A R G B A R G B A …]</span></p>
+          </section>
+
+          <section>
+            <h1>Not a perfect match, <br />but whatever</h1>
+          </section>
+
+          <section>
+            <h1>Do they fit?</h1>
+          </section>
+
+          <section data-background="images/audio-image-fit.svg"></section>
+
+          <section data-background="images/audio-image-fit-solution.svg"></section>
+
+          <section data-background="images/audio-image-fit-solution-2.svg"></section>
+
+          <section>
+            <pre style="margin:0"><code data-trim class="hljs javascript">
+                const image = ctx.createImageData(frequencies.length / 4, canvas.height)
+
+                let idx = 0
+                const render = () => {
+                  requestAnimationFrame(render)
+                  analyser.getByteFrequencyData(frequencies)
+
+                  image.data.set(frequencies, frequencies.length * idx)
+
+                  ctx.putImageData(image, 0, 0)
+
+                  idx = (idx + 1) % canvas.height
+                }
+                requestAnimationFrame(render)
+            </code></pre>
           </section>
 
           <section id="audio-spectrograph">
@@ -666,12 +701,86 @@
           </section>
 
           <section>
-            <h1>Colour mapping</h1>
+            <h1>No processing!</h1>
           </section>
 
-          <section id="audio-spectrograph-color">
+          <section>
+            <h1>1/ Density issues</h1>
+          </section>
+
+          <section>
+            <h3>image.data</h3>
+            <h2><pre style="margin:0" class="mono">
+[r, g, b, a, r, g, b, a, r, g, b, a, …]
+<span class="fragment">[f, f, f, f, f, f, f, f, f, f, f, f, …]</span>
+            </pre></h2>
+          </section>
+
+          <section>
+            <h3>new Uint32Array(image.data.buffer)</h3>
+
+            <h2><pre style="margin:0" class="mono" data-trim>
+[rgba, rgba, rgba, rgba, …]
+<span class="fragment">[f,    f,    f,    f,    …]</span>
+            </pre></h2>
+
+          </section>
+
+          <section>
+            <h1>2/ Colour utilisation</h1>
+          </section>
+
+          <section data-background="images/color-mapping.svg"></section>
+          <section data-background="images/color-mapping-2.svg"></section>
+
+
+          <section>
+            <pre style="margin:0"><code data-trim class="hljs javascript">
+              const to_color = (v) => {
+                let r = -Math.sin(v * PI74)
+                let g =  Math.sin(v * PI74)
+                let b = -Math.cos(v * PI74)
+
+                if(r < 0) r = 0
+                if(g < 0) g = 0
+                if(b < 0) b = 0
+
+                r = r * 255 & 255
+                g = g * 255 & 255
+                b = b * 255 & 255
+
+                return r  | (g << 8) | (b << 16) | 0xff000000
+              }
+            </code></pre>
+          </section>
+
+
+          <section>
+            <h1><pre style="margin:0"><code data-trim class="hljs javascript">
+              image32.set(
+                frequencies.map(to_color),
+                frequencies.length * idx
+              )
+            </code></pre></h1>
+          </section>
+
+
+
+          <section id="audio-spectrograph-color" data-background-color="#fff">
             <p><audio src="assets/bach.ogg" controls ></audio></p>
-            <canvas width=256 height=1280 style="transform:rotate(-90deg) translate(350px, 0) scale(2.5,1)"></canvas>
+            <canvas class="big-canvas" width=1024 height=1280></canvas>
+
+            <style media="screen">
+            .reveal section .big-canvas{
+
+              transform: rotate(-90deg) translate(234px, 128px) scale(0.7,1);
+              z-index: -1;
+              position: absolute;
+              left: 0;
+              top: 0;
+            }
+            </style>
+
           </section>
 
         </section>
@@ -679,16 +788,89 @@
 
         <section>
           <section data-background="#fff">
-            <h1>Remote Data</h1>
+            <h1>Networked Data</h1>
           </section>
 
           <section>
-            <p>[nexmo]</p>
+            <h1>Fetch</h1>
+            <h3><pre style="margin:0"><code data-trim class="hljs javascript">
+              fetch('/object.stl')
+                .then(res => res.arrayBuffer())
+                .then(buffer => new Uint8Array(buffer))
+            </code></pre></h3>
+          </section>
+
+          <section>
+            <h1>WebSockets</h1>
+            <h3><pre style="margin:0"><code data-trim class="hljs javascript">
+              const ws = new WebSocket(url)
+              ws.binaryType = 'arraybuffer'
+
+              ws.onmessage = (event) => data = new Uint8Array(event.data)
+
+              ws.send(buffer)
+            </code></pre></h3>
+          </section>
+
+          <section>
+            <p><img src="images/nexmo.png" /></p>
+          </section>
+
+          <section>
+            <h2>Websocket endpoints</h2>
+            <h3>Route voice data to a server</h3>
+          </section>
+
+          <section data-background="images/nexmo.svg">
+          </section>
+          <section data-background="images/nexmo-2.svg">
+          </section>
+
+          <section data-background="images/call-graph.svg" data-background-size="contain">
+          </section>
+          <section data-background="images/call-graph-data.svg" data-background-size="contain">
+          </section>
+          <section data-background="images/call-graph-data-ignore.svg" data-background-size="contain">
+          </section>
+
+          <!-- <section>
+            <h1>16k &rarr; 44k</h1>
+          </section> -->
+          <!-- 61440 + 16000 + 44000 -->
+
+          <!-- <section>
+            <h2>nexmoGraph.js</h2>
+          </section> -->
+
+
+
+          <section>
+            <h3><pre style="margin:0"><code data-trim class="hljs javascript">
+              const {In, Out} = nexmoGraph({audioCtx})
+
+              navigator.mediaDevices
+                .getUserMedia({ video: false, audio: true })
+                .then(stream => audioCtx.createMediaStreamSource(stream))
+                .then(node => node.connect(In))
+
+              Out.connect(audioCtx.destination)
+            </code></pre></h3>
+          </section>
+
+          <section id="call-demo" data-background="#fff">
+            <form class="dial">
+              <input type="text" name="who">
+              <input type="submit" value="⚡️">
+            </form>
+
+            <canvas width="1280" height="720"></canvas>
+          </section>
+
+          <section>
+            <h1>/</h1>
           </section>
 
         </section>
-
-
 
       </div>
     </div>
@@ -698,6 +880,8 @@
     <script src="lib/slide-builder/slide-builder.js"></script>
 
     <script src="lib/@tweenjs/tween.js/src/Tween.js"></script>
+
+    <script src="scripts/nexmoGraph.js"></script>
 
     <script>
 
@@ -753,6 +937,13 @@
               for(let slide of document.querySelectorAll('.audio-data-code')) {
                 new AudioDataCode(slide)
               }
+            }
+          },
+
+          {
+            src: 'scripts/CallDemo.js',
+            callback: () => {
+              new CallDemo('#call-demo')
             }
           },
 

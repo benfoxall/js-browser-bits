@@ -27,7 +27,7 @@ window.CallDemo = (function(Reveal, SlideBuilder) {
 
       const nexmoToken = localStorage.getItem('nexmotoken')
 
-      if(!nexmoToken) alert("missing token, won't connect")
+      if(!nexmoToken) console.log("Missing token, won't connect")
 
       const nexmo = window.nexmo = nexmoGraph({
         audioCtx,
@@ -46,6 +46,7 @@ window.CallDemo = (function(Reveal, SlideBuilder) {
         who.value = ''
       })
 
+      if(!nexmoToken) form.style.display = 'none'
 
 
       const analyserIn = audioCtx.createAnalyser()
@@ -74,9 +75,6 @@ window.CallDemo = (function(Reveal, SlideBuilder) {
 
       canvas.style.width = Reveal.getConfig().width + 'px'
       canvas.style.height = Reveal.getConfig().height + 'px'
-
-
-
 
       const ctx = canvas.getContext('2d')
       const image_data = ctx.createImageData(freqData.length*2, canvas.height)
