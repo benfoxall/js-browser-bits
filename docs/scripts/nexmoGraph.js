@@ -1,10 +1,17 @@
-window.nexmoGraph = ({audioCtx, origin} = {}) => {
+window.nexmoGraph = ({audioCtx, origin, connect} = {}) => {
 
   audioCtx = audioCtx || new (window.AudioContext || window.webkitAudioContext)
 
   // Interface nodes (just happen to be gain)
   const In = audioCtx.createGain()
   const Out = audioCtx.createGain()
+
+  if(connect === false) {
+    console.log("not connecting")
+
+    In.connect(Out)
+    return {In, Out, audioCtx}
+  }
 
   origin = origin || location.origin.replace(/^http/, 'ws')
 
@@ -96,5 +103,5 @@ window.nexmoGraph = ({audioCtx, origin} = {}) => {
     ws.send(JSON.stringify({ name, token }))
 
 
-  return { audioCtx, In, Out, dial }
+  return { audioCtx, In, Out, dial, ws}
 }

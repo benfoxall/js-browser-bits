@@ -8,11 +8,13 @@ window.CallDemo = (function(Reveal, SlideBuilder) {
     const root = document.querySelector(selector)
 
     const canvas = root.querySelector('canvas')
+    const form = root.querySelector('form')
 
     const builder = new SlideBuilder(root)
 
     let rAF
     let audioCtx
+    let _stream
 
     builder.shown(() => {
       console.log("creating audio context")
@@ -23,9 +25,26 @@ window.CallDemo = (function(Reveal, SlideBuilder) {
         audioCtx = new AudioContext()
       }
 
-      const nexmo = window.nexmo = nexmoGraph({audioCtx, origin: 'wss://ws-phone.herokuapp.com'})
+      const nexmoToken = localStorage.getItem('nexmotoken')
 
-      const {In, Out} = nexmo
+      if(!nexmoToken) alert("missing token, won't connect")
+
+      const nexmo = window.nexmo = nexmoGraph({
+        audioCtx,
+        origin: 'wss://ws-phone.herokuapp.com',
+        connect: !!nexmoToken
+      })
+
+      const {In, Out, dial} = nexmo
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault()
+        const who = form.querySelector('[name=who]')
+        const name = who.value
+        console.log("dialing (with token) ", name)
+        dial(name, nexmoToken)
+        who.value = ''
+      })
 
 
 
@@ -39,6 +58,7 @@ window.CallDemo = (function(Reveal, SlideBuilder) {
       navigator.mediaDevices
         .getUserMedia({ video: false, audio: true })
         .then(stream => {
+          _stream = stream
           audioCtx.createMediaStreamSource(stream)
           .connect(analyserIn)
         })
@@ -50,7 +70,7 @@ window.CallDemo = (function(Reveal, SlideBuilder) {
 
       // create the canvas and image data
       canvas.width = freqData.length*2
-      canvas.height = window.innerHeight * 1.5
+      canvas.height = window.innerHeight * 1
 
       canvas.style.width = Reveal.getConfig().width + 'px'
       canvas.style.height = Reveal.getConfig().height + 'px'
@@ -63,17 +83,6 @@ window.CallDemo = (function(Reveal, SlideBuilder) {
 
       // access image data at same stride as fft
       const image_data_32 = new Uint32Array(image_data.data.buffer)
-
-
-      //
-      //
-      //
-      //
-      // const source = audioCtx.createMediaElementSource(audio_element)
-      // const analyser = audioCtx.createAnalyser()
-      //
-      // source.connect(analyser)
-      // analyser.connect(audioCtx.destination)
 
       let idx = 0
 
@@ -122,6 +131,11 @@ window.CallDemo = (function(Reveal, SlideBuilder) {
     .hidden(() => {
       cancelAnimationFrame(rAF)
 
+
+      if(_stream) {
+        for(let track of _stream.getTracks())
+          track.stop()
+      }
 
       // audioCtx.close()
         // .then(() => console.log("audio context closed"))
