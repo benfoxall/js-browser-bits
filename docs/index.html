@@ -479,8 +479,8 @@
             </code></pre>
           </section>
 
-          <section id="audio-freq-data">
-            <h2>Frequency Data</h2>
+          <section id="audio-time-data">
+            <h2>Time Domain Data</h2>
             <p><audio src="assets/bach.ogg" controls ></audio></p>
             <p class="mono output">[]</p>
           </section>
@@ -497,7 +497,7 @@
 
 
                 ctx.clearRect(0,0,timeData.length,255)
-                
+
                 ctx.beginPath()
                 timeData.forEach((value, i) => {
                   ctx.lineTo(i, value)
@@ -506,6 +506,19 @@
               }
               draw()
             </code></pre>
+          </section>
+
+          <section id="audio-time-graph">
+            <h2>Time Domain Data</h2>
+            <p><audio src="assets/bach.ogg" controls ></audio></p>
+
+            <canvas width=1280 height=300></canvas>
+          </section>
+
+          <section id="audio-freq-data">
+            <h2>Frequency Data</h2>
+            <p><audio src="assets/bach.ogg" controls ></audio></p>
+            <p class="mono output">[]</p>
           </section>
 
           <section id="audio-freq-graph">

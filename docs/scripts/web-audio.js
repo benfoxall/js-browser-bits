@@ -40,10 +40,35 @@
   }
 
 
+  let timeData, subFreq, more
+
+
+  const timeSlide = document.querySelector('#audio-time-data')
+  const time_output_element = timeSlide.querySelector('.output')
+
+
+  createAudioSlide(
+    timeSlide,
+    (analyser) => {
+      timeData = new Uint8Array(analyser.fftSize)
+      subFreq = timeData.subarray(0, 64)
+      more = `, …(${timeData.length - subFreq.length} more)`
+    },
+    (analyser) => {
+      analyser.getByteTimeDomainData(timeData)
+
+      time_output_element.innerText =
+        [].map.call(subFreq,(n)=>n.toString().padStart(3,'\xa0')).join(', ')
+       + more
+    }
+  )
+
+
+
+
   const freqSlide = document.querySelector('#audio-freq-data')
   const output_element = freqSlide.querySelector('.output')
 
-  let freqData, subFreq, more
 
   createAudioSlide(
     freqSlide,
@@ -84,6 +109,37 @@
 
       ctx.beginPath()
       freqData.forEach((value, i) => {
+        ctx.lineTo(i, 255-value)
+      })
+      ctx.stroke()
+
+    }
+  )
+
+
+
+
+  const timeSlideGraph = document.querySelector('#audio-time-graph')
+  const timeCanvasElement = timeSlideGraph.querySelector('canvas')
+
+  createAudioSlide(
+    timeSlideGraph,
+    (analyser) => {
+      timeData = new Uint8Array(analyser.fftSize)
+
+      ctx = timeCanvasElement.getContext('2d')
+      ctx.resetTransform()
+      ctx.scale(timeCanvasElement.width / timeData.length, timeCanvasElement.height / 255)
+      ctx.strokeStyle = '#fff'
+    },
+    (analyser) => {
+      analyser.getByteTimeDomainData(timeData)
+
+      ctx.clearRect(0,0,timeData.length,255)
+      window.t = timeData
+
+      ctx.beginPath()
+      timeData.forEach((value, i) => {
         ctx.lineTo(i, 255-value)
       })
       ctx.stroke()
