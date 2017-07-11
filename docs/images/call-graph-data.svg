@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1280px" height="720px" viewBox="0 0 1280 720" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 45.1 (43504) - http://www.bohemiancoding.com/sketch -->
+    <title>call-graph-data</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="call-graph-data">
+            <text id="BufferSource(s)" font-family="Avenir-Heavy, Avenir" font-size="16" font-weight="600" fill="#FFFFFF">
+                <tspan x="704" y="288">BufferSource(s)</tspan>
+            </text>
+            <text id="Gain" font-family="Avenir-Heavy, Avenir" font-size="16" font-weight="600" fill="#FFFFFF">
+                <tspan x="926" y="347">Gain</tspan>
+            </text>
+            <text id="ScriptProcessorNode" font-family="Avenir-Heavy, Avenir" font-size="16" font-weight="600" fill="#FFFFFF">
+                <tspan x="450.945775" y="431">ScriptProcessorNode</tspan>
+            </text>
+            <text id="Server" font-family="Avenir-Heavy, Avenir" font-size="16" font-weight="600" fill="#FFFFFF">
+                <tspan x="530" y="118">Server</tspan>
+            </text>
+            <text id="Nexmo" font-family="Avenir-Heavy, Avenir" font-size="16" font-weight="600" fill="#FFFFFF">
+                <tspan x="74" y="118">Nexmo</tspan>
+            </text>
+            <circle id="Oval" stroke="#EAEAEA" stroke-width="4" cx="548.168394" cy="331.168394" r="35.1683938"></circle>
+            <circle id="Oval" stroke="#EAEAEA" stroke-width="4" cx="689.168394" cy="348.668394" r="35.1683938"></circle>
+            <circle id="Oval" stroke="#EAEAEA" stroke-width="4" cx="688.168394" cy="331.168394" r="35.1683938"></circle>
+            <circle id="Oval" stroke="#EAEAEA" stroke-width="4" cx="689.168394" cy="366.168394" r="35.1683938"></circle>
+            <text id="MediaStreamSource" font-family="Avenir-Heavy, Avenir" font-size="16" font-weight="600" fill="#FFFFFF">
+                <tspan x="109.216984" y="594.84">MediaStreamSource</tspan>
+            </text>
+            <text id="Microphone-(gUM)" font-family="Avenir-Heavy, Avenir" font-size="16" font-weight="600" fill="#FFFFFF">
+                <tspan x="26.5609844" y="338">Microphone (gUM)</tspan>
+            </text>
+            <text id="AnalyserNode" font-family="Avenir-Heavy, Avenir" font-size="16" font-weight="600" fill="#FFFFFF">
+                <tspan x="293" y="518">AnalyserNode</tspan>
+            </text>
+            <text id="AnalyserNode" font-family="Avenir-Heavy, Avenir" font-size="16" font-weight="600" fill="#FFFFFF">
+                <tspan x="822" y="560">AnalyserNode</tspan>
+            </text>
+            <text id="ImageData" font-family="Avenir-Heavy, Avenir" font-size="16" font-weight="600" fill="#FFFFFF">
+                <tspan x="592.43292" y="686.336788">ImageData</tspan>
+            </text>
+            <text id="AudioDestination" font-family="Avenir-Heavy, Avenir" font-size="16" font-weight="600" fill="#FFFFFF">
+                <tspan x="1023.172" y="561">AudioDestination</tspan>
+            </text>
+            <circle id="Oval" stroke="#EAEAEA" stroke-width="4" cx="185.168394" cy="528.168394" r="35.1683938"></circle>
+            <circle id="Oval" stroke="#EAEAEA" stroke-width="4" cx="349.641839" cy="455.168394" r="35.1683938"></circle>
+            <circle id="Oval" stroke="#EAEAEA" stroke-width="4" cx="880.168394" cy="494.168394" r="35.1683938"></circle>
+            <circle id="Oval" stroke="#EAEAEA" stroke-width="4" cx="1088.16839" cy="496.168394" r="35.1683938"></circle>
+            <circle id="Oval" stroke="#EAEAEA" stroke-width="4" cx="881.168394" cy="341.168394" r="35.1683938"></circle>
+            <path d="M237,510 L298.126943,481" id="Line" stroke="#EAEAEA" stroke-width="4" stroke-linecap="square"></path>
+            <path id="Line-decoration-1" d="M298.126943,481 L287.08347,482.918777 L289.655257,488.339655 L298.126943,481 Z" stroke="#EAEAEA" stroke-width="4" stroke-linecap="square"></path>
+            <path d="M123,446 L152,490" id="Line" stroke="#EAEAEA" stroke-width="4" stroke-linecap="square"></path>
+            <path id="Line-decoration-1" d="M152,490 L148.56149,479.331511 L143.551741,482.633391 L152,490 Z" stroke="#EAEAEA" stroke-width="4" stroke-linecap="square"></path>
+            <path d="M400,425 L496,364" id="Line" stroke="#EAEAEA" stroke-width="4" stroke-linecap="square"></path>
+            <path id="Line-decoration-1" d="M496,364 L485.275629,367.26004 L488.493468,372.32418 L496,364 Z" stroke="#EAEAEA" stroke-width="4" stroke-linecap="square"></path>
+            <path d="M400,476 L574,614" id="Line" stroke="#28C6CD" stroke-width="4" stroke-linecap="square"></path>
+            <path id="Line-decoration-1" d="M574,614 L567.402409,604.938444 L563.674041,609.63943 L574,614 Z" stroke="#28C6CD" stroke-width="4" stroke-linecap="square"></path>
+            <path d="M833,517 L685,615" id="Line" stroke="#28C6CD" stroke-width="4" stroke-linecap="square"></path>
+            <path id="Line-decoration-1" d="M685,615 L695.661112,611.538688 L692.348528,606.53601 L685,615 Z" stroke="#28C6CD" stroke-width="4" stroke-linecap="square"></path>
+            <path d="M581.404189,375.180072 C627.100997,411.891037 664.705216,430.24652 694.216844,430.24652 C723.728472,430.24652 770.084239,413.926643 833.284144,381.28689" id="Line" stroke="#EAEAEA" stroke-width="4" stroke-linecap="square"></path>
+            <path id="Line-decoration-1" d="M833.284144,381.28689 L822.311697,383.577174 L825.064916,388.908195 L833.284144,381.28689 Z" stroke="#EAEAEA" stroke-width="4" stroke-linecap="square"></path>
+            <path d="M926,495 L1036,495" id="Line" stroke="#EAEAEA" stroke-width="4" stroke-linecap="square"></path>
+            <path id="Line-decoration-1" d="M1036,495 L1025.2,492 L1025.2,498 L1036,495 Z" stroke="#EAEAEA" stroke-width="4" stroke-linecap="square"></path>
+            <path d="M881,390 L881,446" id="Line" stroke="#EAEAEA" stroke-width="4" stroke-linecap="square"></path>
+            <path id="Line-decoration-1" d="M881,446 L884,435.2 L878,435.2 L881,446 Z" stroke="#EAEAEA" stroke-width="4" stroke-linecap="square"></path>
+            <path d="M746,318 L826,328" id="Line" stroke="#EAEAEA" stroke-width="4" stroke-linecap="square"></path>
+            <path id="Line-decoration-1" d="M826,328 L815.655503,323.683591 L814.911295,329.637258 L826,328 Z" stroke="#EAEAEA" stroke-width="4" stroke-linecap="square"></path>
+            <path d="M747,344 L826,344" id="Line" stroke="#EAEAEA" stroke-width="4" stroke-linecap="square"></path>
+            <path id="Line-decoration-1" d="M826,344 L815.2,341 L815.2,347 L826,344 Z" stroke="#EAEAEA" stroke-width="4" stroke-linecap="square"></path>
+            <path d="M748,370 L826,360" id="Line" stroke="#EAEAEA" stroke-width="4" stroke-linecap="square"></path>
+            <path id="Line-decoration-1" d="M826,360 L814.906185,358.39773 L815.669171,364.34902 L826,360 Z" stroke="#EAEAEA" stroke-width="4" stroke-linecap="square"></path>
+            <rect id="Rectangle-4" stroke="#EAEAEA" stroke-width="4" x="532" y="21" width="155" height="79" rx="8"></rect>
+            <rect id="Rectangle-4" stroke="#EAEAEA" stroke-width="4" x="76" y="21" width="155" height="79" rx="8"></rect>
+            <rect id="Rectangle-4" stroke="#EAEAEA" stroke-width="4" x="600" y="593" width="66.3367875" height="66.3367875" rx="8"></rect>
+            <rect id="Rectangle-4" stroke="#EAEAEA" stroke-width="4" x="64" y="362" width="66.3367875" height="66.3367875" rx="8"></rect>
+            <path d="M626,114 L679,279" id="Line-2" stroke="#AF28CD" stroke-width="4" stroke-linecap="square"></path>
+            <path id="Line-2-decoration-1" d="M679,279 L678.553384,267.799976 L672.840852,269.634911 L679,279 Z" stroke="#AF28CD" stroke-width="4" stroke-linecap="square"></path>
+            <path d="M602,119 L559,271" id="Line-3" stroke="#B6CD28" stroke-width="4" stroke-linecap="square"></path>
+            <path id="Line-3-decoration-1" d="M602,119 L601.946824,130.208799 L596.1734,128.575528 L602,119 Z" stroke="#B6CD28" stroke-width="4" stroke-linecap="square"></path>
+            <path d="M248.96396,49.1767093 L513,49.1767093" id="Line-2" stroke="#EAEAEA" stroke-width="4" stroke-linecap="square" transform="translate(380.500000, 49.500000) scale(1, -1) translate(-380.500000, -49.500000) "></path>
+            <path id="Line-2-decoration-1" d="M513,49.1767093 L502.2,46.1767093 L502.2,52.1767093 L513,49.1767093 Z" stroke="#EAEAEA" stroke-width="4" stroke-linecap="square"></path>
+            <path d="M248.96396,68.1767093 L513,68.1767093" id="Line-2" stroke="#EAEAEA" stroke-width="4" stroke-linecap="square" transform="translate(380.500000, 68.500000) scale(-1, -1) translate(-380.500000, -68.500000) "></path>
+            <path id="Line-2-decoration-1" d="M513,68.1767093 L502.2,65.1767093 L502.2,71.1767093 L513,68.1767093 Z" stroke="#EAEAEA" stroke-width="4" stroke-linecap="square"></path>
+        </g>
+    </g>
+</svg>

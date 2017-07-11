@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1280px" height="720px" viewBox="0 0 1280 720" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 45.1 (43504) - http://www.bohemiancoding.com/sketch -->
+    <title>audio-graph</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="audio-graph">
+            <text id="MediaElementSource" font-family="Avenir-Heavy, Avenir" font-size="30" font-weight="600" fill="#FFFFFF">
+                <tspan x="20" y="468">MediaElementSource</tspan>
+            </text>
+            <text id="AnalyserNode" font-family="Avenir-Heavy, Avenir" font-size="30" font-weight="600" fill="#FFFFFF">
+                <tspan x="548" y="468">AnalyserNode</tspan>
+            </text>
+            <text id="Destination" font-family="Avenir-Heavy, Avenir" font-size="30" font-weight="600" fill="#FFFFFF">
+                <tspan x="1059" y="477">Destination</tspan>
+            </text>
+            <circle id="Oval" stroke="#EAEAEA" stroke-width="4" cx="170" cy="355" r="60"></circle>
+            <circle id="Oval" stroke="#EAEAEA" stroke-width="4" cx="647" cy="355" r="60"></circle>
+            <circle id="Oval" stroke="#EAEAEA" stroke-width="4" cx="1140" cy="355" r="60"></circle>
+            <path d="M237,359 L548,359" id="Line" stroke="#EAEAEA" stroke-width="4" stroke-linecap="square"></path>
+            <path id="Line-decoration-1" d="M548,359 L537.2,356 L537.2,362 L548,359 Z" stroke="#EAEAEA" stroke-width="4" stroke-linecap="square"></path>
+            <path d="M732,359 L1058.11945,359" id="Line" stroke="#EAEAEA" stroke-width="4" stroke-linecap="square"></path>
+            <path id="Line-decoration-1" d="M1058.11945,359 L1047.31945,356 L1047.31945,362 L1058.11945,359 Z" stroke="#EAEAEA" stroke-width="4" stroke-linecap="square"></path>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1280px" height="720px" viewBox="0 0 1280 720" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 45.1 (43504) - http://www.bohemiancoding.com/sketch -->
+    <title>audio-image-fit-solution-2</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="audio-image-fit-solution-2">
+            <rect id="Rectangle" stroke="#EAEAEA" stroke-width="4" x="365" y="67" width="549.459993" height="37.4217015"></rect>
+            <rect id="Rectangle" stroke="#EAEAEA" stroke-width="4" transform="translate(639.729996, 400.746379) scale(1, -1) translate(-639.729996, -400.746379) " x="365" y="149" width="549.459993" height="503.492758"></rect>
+            <path d="M252,186 L327.026662,186" id="Line" stroke="#EAEAEA" stroke-width="4" stroke-linecap="square"></path>
+            <path id="Line-decoration-1" d="M327.026662,186 L316.226662,183 L316.226662,189 L327.026662,186 Z" stroke="#EAEAEA" stroke-width="4" stroke-linecap="square"></path>
+            <text id="t0" font-family="Avenir-Heavy, Avenir" font-size="30" font-weight="600" fill="#FFFFFF">
+                <tspan x="187" y="194">t0</tspan>
+            </text>
+            <path d="M252,236 L327.026662,236" id="Line" stroke="#EAEAEA" stroke-width="4" stroke-linecap="square"></path>
+            <path id="Line-decoration-1" d="M327.026662,236 L316.226662,233 L316.226662,239 L327.026662,236 Z" stroke="#EAEAEA" stroke-width="4" stroke-linecap="square"></path>
+            <text id="t1" font-family="Avenir-Heavy, Avenir" font-size="30" font-weight="600" fill="#FFFFFF">
+                <tspan x="187" y="244">t1</tspan>
+            </text>
+            <path d="M252,286 L327.026662,286" id="Line" stroke="#EAEAEA" stroke-width="4" stroke-linecap="square"></path>
+            <path id="Line-decoration-1" d="M327.026662,286 L316.226662,283 L316.226662,289 L327.026662,286 Z" stroke="#EAEAEA" stroke-width="4" stroke-linecap="square"></path>
+            <text id="t2" font-family="Avenir-Heavy, Avenir" font-size="30" font-weight="600" fill="#FFFFFF">
+                <tspan x="187" y="294">t2</tspan>
+            </text>
+            <path d="M252,336 L327.026662,336" id="Line" stroke="#EAEAEA" stroke-width="4" stroke-linecap="square"></path>
+            <path id="Line-decoration-1" d="M327.026662,336 L316.226662,333 L316.226662,339 L327.026662,336 Z" stroke="#EAEAEA" stroke-width="4" stroke-linecap="square"></path>
+            <text id="t3" font-family="Avenir-Heavy, Avenir" font-size="30" font-weight="600" fill="#FFFFFF">
+                <tspan x="187" y="344">t3</tspan>
+            </text>
+            <path d="M252,386 L327.026662,386" id="Line" stroke="#EAEAEA" stroke-width="4" stroke-linecap="square"></path>
+            <path id="Line-decoration-1" d="M327.026662,386 L316.226662,383 L316.226662,389 L327.026662,386 Z" stroke="#EAEAEA" stroke-width="4" stroke-linecap="square"></path>
+            <text id="…" font-family="Avenir-Heavy, Avenir" font-size="30" font-weight="600" fill="#FFFFFF">
+                <tspan x="187" y="394">…</tspan>
+            </text>
+        </g>
+    </g>
+</svg>

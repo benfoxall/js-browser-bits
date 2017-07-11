@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1280px" height="720px" viewBox="0 0 1280 720" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 45.1 (43504) - http://www.bohemiancoding.com/sketch -->
+    <title>color-mapping</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="color-mapping">
+            <rect id="Rectangle-2" stroke="#EAEAEA" stroke-width="4" x="518" y="243" width="240" height="240"></rect>
+            <path d="M505,495 L774.670169,225.329831" id="Line" stroke="#00FF16" stroke-width="4" stroke-linecap="square"></path>
+            <path d="M505,505 L774.670169,235.329831" id="Line" stroke="#4000FF" stroke-width="4" stroke-linecap="square"></path>
+            <path d="M505,485 L774.670169,215.329831" id="Line" stroke="#FF0000" stroke-width="4" stroke-linecap="square"></path>
+            <text id="frequency" font-family="Avenir-Heavy, Avenir" font-size="30" font-weight="600" fill="#FFFFFF">
+                <tspan x="570" y="515">frequency</tspan>
+            </text>
+            <text id="colour" transform="translate(484.500000, 360.000000) rotate(-90.000000) translate(-484.500000, -360.000000) " font-family="Avenir-Heavy, Avenir" font-size="30" font-weight="600" fill="#FFFFFF">
+                <tspan x="440.5" y="369.5">colour</tspan>
+            </text>
+        </g>
+    </g>
+</svg>

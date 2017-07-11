@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1280px" height="720px" viewBox="0 0 1280 720" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 45.1 (43504) - http://www.bohemiancoding.com/sketch -->
+    <title>audio-graph-complex</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="audio-graph-complex">
+            <text id="BufferSource" font-family="Avenir-Heavy, Avenir" font-size="30" font-weight="600" fill="#FFFFFF">
+                <tspan x="229" y="217">BufferSource</tspan>
+            </text>
+            <text id="ScriptProcessorNode" font-family="Avenir-Heavy, Avenir" font-size="30" font-weight="600" fill="#FFFFFF">
+                <tspan x="670" y="468">ScriptProcessorNode</tspan>
+            </text>
+            <circle id="Oval" stroke="#EAEAEA" stroke-width="4" cx="817" cy="355" r="60"></circle>
+            <circle id="Oval" stroke="#EAEAEA" stroke-width="4" cx="320" cy="104" r="60"></circle>
+            <text id="MediaElementSource" font-family="Avenir-Heavy, Avenir" font-size="30" font-weight="600" fill="#FFFFFF">
+                <tspan x="20" y="468">MediaElementSource</tspan>
+            </text>
+            <text id="AnalyserNode" font-family="Avenir-Heavy, Avenir" font-size="30" font-weight="600" fill="#FFFFFF">
+                <tspan x="390" y="468">AnalyserNode</tspan>
+            </text>
+            <text id="Destination" font-family="Avenir-Heavy, Avenir" font-size="30" font-weight="600" fill="#FFFFFF">
+                <tspan x="1059" y="477">Destination</tspan>
+            </text>
+            <circle id="Oval" stroke="#EAEAEA" stroke-width="4" cx="170" cy="355" r="60"></circle>
+            <circle id="Oval" stroke="#EAEAEA" stroke-width="4" cx="493" cy="355" r="60"></circle>
+            <circle id="Oval" stroke="#EAEAEA" stroke-width="4" cx="1140" cy="355" r="60"></circle>
+            <path d="M247,355 L411,355" id="Line" stroke="#EAEAEA" stroke-width="4" stroke-linecap="square"></path>
+            <path id="Line-decoration-1" d="M411,355 L400.2,352 L400.2,358 L411,355 Z" stroke="#EAEAEA" stroke-width="4" stroke-linecap="square"></path>
+            <path d="M578,355 L742,355" id="Line" stroke="#EAEAEA" stroke-width="4" stroke-linecap="square"></path>
+            <path id="Line-decoration-1" d="M742,355 L731.2,352 L731.2,358 L742,355 Z" stroke="#EAEAEA" stroke-width="4" stroke-linecap="square"></path>
+            <path d="M381.425684,154.275159 C408.303241,177.078408 425.705663,194.527131 433.632952,206.621328 C441.56024,218.715524 453.091302,243.327616 468.226136,280.457604" id="Line" stroke="#EAEAEA" stroke-width="4" stroke-linecap="square"></path>
+            <path id="Line-decoration-1" d="M468.226136,280.457604 L466.927601,269.324149 L461.371454,271.588932 L468.226136,280.457604 Z" stroke="#EAEAEA" stroke-width="4" stroke-linecap="square"></path>
+            <path d="M895,355 L1059,355" id="Line" stroke="#EAEAEA" stroke-width="4" stroke-linecap="square"></path>
+            <path id="Line-decoration-1" d="M1059,355 L1048.2,352 L1048.2,358 L1059,355 Z" stroke="#EAEAEA" stroke-width="4" stroke-linecap="square"></path>
+        </g>
+    </g>
+</svg>
