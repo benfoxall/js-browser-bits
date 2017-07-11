@@ -202,12 +202,57 @@
 
 
 
+    // const to_color = (v) => {
+    //   let r = -Math.sin(v * PI74)
+    //   let g =  Math.sin(v * PI74)
+    //   let b = -Math.cos(v * PI74)
+    //
+    //   if(r < 0) r = 0
+    //   if(g < 0) g = 0
+    //   if(b < 0) b = 0
+    //
+    //   r = r * 255 & 255
+    //   g = g * 255 & 255
+    //   b = b * 255 & 255
+    //
+    //   return r  | (g << 8) | (b << 16) | 0xff000000
+    // }
+
 
     const spectrographColorSlide = document.querySelector('#audio-spectrograph-color')
     const spectrographCanvasColor = spectrographColorSlide.querySelector('canvas')
 
     // let imageData, idx
     // let fdc
+    let color_32
+
+    const to_color = (v) => {
+      const PI74 = Math.PI * (7 / 4)
+
+      let r = -Math.sin(v * PI74)
+      let g =  Math.sin(v * PI74)
+      let b = -Math.cos(v * PI74)
+
+      if(r < 0) r = 0
+      if(g < 0) g = 0
+      if(b < 0) b = 0
+
+      r = (r * 255) & 255
+      g = (g * 255) & 255
+      b = (b * 255) & 255
+
+      // r = 0
+      // g = 255
+      // b = 150
+
+      r = 255-r
+      g = 255-g
+      b = 255-b
+
+      // return 0xffff00ff
+
+      return r  | (g << 8) | (b << 16) | 0xff000000
+    }
 
     createAudioSlide(
       spectrographColorSlide,
@@ -218,13 +263,13 @@
         ctx = spectrographCanvasColor.getContext('2d')
 
         imageData = ctx.createImageData(
-          freqData.length/4,
+          freqData.length,
           spectrographCanvasColor.height
         )
 
-        idx = 0
+        color_32 = new Uint32Array(imageData.data.buffer)
 
-        ctx.strokeStyle = '#fff'
+        idx = 0
 
       },
       (analyser, audio_element) => {
@@ -232,16 +277,9 @@
 
         analyser.getByteFrequencyData(freqData)
 
-        for (var i = 0; i < fdc.length; i += 4) {
-          fdc[i]   = -Math.sin((fdc[i  ]/255) * Math.PI * 1.75) * 255
-          fdc[i+1] =  Math.sin((fdc[i+1]/255) * Math.PI * 1.75) * 255
-          fdc[i+2] = -Math.cos((fdc[i+2]/255) * Math.PI * 1.75) * 255
-        }
-
-        imageData.data.set(
-          freqData,
-          idx * freqData.length
-        )
+        freqData.forEach((f, i) => {
+          color_32[(idx * freqData.length) + i] = to_color(f/255)
+        })
 
         idx = (idx + 1) % spectrographCanvasColor.height
 
