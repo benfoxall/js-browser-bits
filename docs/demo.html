@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Frequency Image Data</title>
+  <style media="screen">
+    canvas { position: absolute; left: 0; top: 0; z-index: -1; width: 100vw; height: 100vh; }
+  </style>
+</head>
+<body>
+  <audio src="assets/bach.ogg" controls/></audio>
+  <canvas></canvas>
+
+  <script type="text/javascript">
+    const audio = document.querySelector('audio')
+    const canvas = document.querySelector('canvas')
+
+    // link up web audio
+    const audioCtx = new AudioContext()
+    const source = audioCtx.createMediaElementSource(audio)
+    const analyser = audioCtx.createAnalyser()
+    const freqData = new Uint8Array(analyser.frequencyBinCount)
+
+    source.connect(analyser)
+    analyser.connect(audioCtx.destination)
+
+    // create the canvas and image data
+    canvas.width = freqData.length/4
+    canvas.height = window.innerHeight
+
+    const ctx = canvas.getContext('2d')
+    const image_data = ctx.createImageData(freqData.length / 4, canvas.height)
+
+
+    let idx = 0
+    const render = () => {
+      requestAnimationFrame(render)
+      analyser.getByteFrequencyData(freqData)
+
+      // write directly into the image data
+      image_data.data.set(freqData, freqData.length * idx)
+
+      ctx.putImageData(image_data, 0, 0)
+
+      idx = (idx + 1) % canvas.height
+    }
+    requestAnimationFrame(render)
+
+  </script>
+</body>
+</html>

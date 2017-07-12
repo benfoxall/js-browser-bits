@@ -57,3 +57,5 @@ typings/
 # dotenv environment variables file
 .env
 
+# should probably add this to my global file
+notes.ben.md

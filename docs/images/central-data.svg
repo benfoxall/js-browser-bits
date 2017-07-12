@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1280px" height="720px" viewBox="0 0 1280 720" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 45.1 (43504) - http://www.bohemiancoding.com/sketch -->
+    <title>central-data</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="central-data" stroke="#EAEAEA" stroke-width="4">
+            <rect id="Rectangle" transform="translate(635.879904, 664.442771) scale(1, -1) translate(-635.879904, -664.442771) " x="128" y="648" width="1015.75981" height="32.8855412"></rect>
+            <rect id="Rectangle-2" x="604" y="632" width="83.3588191" height="65"></rect>
+            <rect id="Rectangle-2" x="704" y="632" width="83.3588191" height="65"></rect>
+            <rect id="Rectangle-2" x="506" y="632" width="83.3588191" height="65"></rect>
+            <rect id="Rectangle" transform="translate(635.666553, 207.788263) scale(1, -1) translate(-635.666553, -207.788263) " x="528" y="51" width="215.333105" height="313.576526"></rect>
+            <rect id="Rectangle" transform="translate(365.666553, 260.163843) scale(1, -1) translate(-365.666553, -260.163843) " x="258" y="53" width="215.333105" height="414.327685"></rect>
+            <rect id="Rectangle" transform="translate(914.666553, 260.163843) scale(1, -1) translate(-914.666553, -260.163843) " x="807" y="53" width="215.333105" height="414.327685"></rect>
+            <polyline id="Path-2" points="548 212.348915 589.483418 155 633.855005 212.348915 684.035305 285.958346 713.745877 230.072942 723.051477 245.504567"></polyline>
+            <path d="M308,128 L421.004425,128" id="Line" stroke-linecap="square"></path>
+            <path d="M308,209 L421.004425,209" id="Line" stroke-linecap="square"></path>
+            <path d="M308,289 L421.004425,289" id="Line" stroke-linecap="square"></path>
+            <path d="M309,368 L422.004425,368" id="Line" stroke-linecap="square"></path>
+            <circle id="Oval-3" cx="854" cy="127" r="20"></circle>
+            <circle id="Oval-3" cx="854" cy="260" r="20"></circle>
+            <circle id="Oval-3" cx="854" cy="190" r="20"></circle>
+            <path d="M778,602 L825,510" id="Line-2" stroke-linecap="square"></path>
+            <path id="Line-2-decoration-1" d="M825,510 L817.415077,518.252814 L822.758208,520.982457 L825,510 Z" stroke-linecap="square"></path>
+            <path d="M641,604 L641,440" id="Line-3" stroke-linecap="square"></path>
+            <path id="Line-3-decoration-1" d="M641,440 L638,450.8 L644,450.8 L641,440 Z" stroke-linecap="square"></path>
+            <path d="M538,606 L465,512" id="Line-4" stroke-linecap="square"></path>
+            <path id="Line-4-decoration-1" d="M465,512 L469.254861,522.369964 L473.993688,518.689812 L465,512 Z" stroke-linecap="square"></path>
+        </g>
+    </g>
+</svg>

@@ -24,21 +24,27 @@
         </section>
 
         <section>
-          <section data-background="#eee">
+          <section data-background="#fff">
             <h2>I'm Ben</h2>
           </section>
           <section>
             <h2>Freelance developer</h2>
             <h4>based in Oxford</h4>
+            <h6 style="font-size:0.5em">(available for projects!)</h6>
           </section>
           <section>
-            <h4>[relevant stuff]</h4>
+            <h4>Data, Visualisation, Realtime, Performance, VR, Interaction, Stuff</h4>
           </section>
         </section>
 
         <section>
-          <section>
+          <!-- <section>
             <h2>We're going to cover a lot</h2>
+          </section> -->
+          <section data-background="#fff">
+            <h2>Binary data in JavaScript</h2>
+            <h2>Accessing raw image &amp; audio data</h2>
+            <h2>Mashing data together (demos)</h2>
           </section>
           <!--section>
             <h4>1. <span class="fragment">Struggle to learn something</span>
@@ -52,17 +58,26 @@
 
         <section>
           <section data-background="#fff">
-            <h1>Bits</h1>
+            <h1>Binary Numbers</h1>
           </section>
 
           <section>
-            <h2>[hands]</h2>
-            <h4>Decimal (base 10)</h4>
+            <h1>🙌</h1>
+            <h1>10 Digits</h1>
+            <h2>Base 10</h2>
+            <h2>Decimal</h2>
           </section>
-
           <section>
-            <h2>[microchip]</h2>
-            <h4>Binary (base 2)</h4>
+            <h1>🤖</h1>
+            <h1>2 Digits</h1>
+            <h2>Base 2</h2>
+            <h2>Binary</h2>
+          </section>
+          <section>
+            <h1>Decimal <span class="fragment"><small>42</small></span></h1>
+            <h1>Binary <span class="fragment"><small>0b101010</small></span></h1>
+            <h1>Octal <span class="fragment"><small>0o52</small></span></h1>
+            <h1>Hexidecimal <span class="fragment"><small>0x2a</small></span></h1>
           </section>
 
           <!-- <section id="count-dec">
@@ -73,7 +88,7 @@
             <h1 class="output-bin mono" style="text-align:right">-</h1>
           </section> -->
 
-          <section class="frag-collapse">
+          <!-- <section class="frag-collapse">
 
             <h3>Base 10</h3>
             <h3 class="output-dec mono" style="text-align:right">42</h3>
@@ -86,7 +101,7 @@
 
             <h3>Base 16</h3>
             <h3 class="output-hex mono" style="text-align:right">2a</h3>
-          </section>
+          </section> -->
 
           <section>
             <h3>How to JavaScript</h3>
@@ -117,14 +132,14 @@
             <h3>Integer Literals</h3>
             <h1><pre><code data-trim class="hljs javascript">
               42 == 42
-              42 == 0b101010 //*es6
+              42 == 0b101010
               42 == 0o52
               42 == 0x2a
             </code></pre></h1>
           </section>
 
 
-          <section>
+          <!-- <section>
             <h1>What can we do now?</h1>
           </section>
 
@@ -136,24 +151,23 @@
                 Math.pow(0o4, 0x2)
               )
             </code></pre></h1>
-          </section>
+          </section> -->
 
           <section>
-            <h2>But also, other stuff.</h2>
-            <h1 class="fragment">OR, AND, NOT, …</h1>
+            <!-- <h2>But also, other stuff.</h2> -->
+            <h1>OR, AND, NOT, SHIFT</h1>
           </section>
 
-          <section>
+          <!-- <section>
             <h1><pre><code data-trim class="hljs javascript" data-noescape>
                     011<span class="fragment">00101010101</span>
                 AND 101<span class="fragment">10001010111</span>
 
                 =   001<span class="fragment">00001010101</span>
             </code></pre></h1>
-          </section>
+          </section> -->
 
           <section>
-            <h1>Bitwise operators</h1>
             <h1>&amp; | ~ << >></h1>
           </section>
 
@@ -204,7 +218,7 @@
 
 
           <section>
-            <h1>In use</h1>
+            <h1>Use cases</h1>
           </section>
 
           <section>
@@ -225,6 +239,7 @@
           </section>
 
           <section>
+            <h3>Tricks</h3>
             <h3><pre><code data-trim class="hljs javascript" data-noescape>
               const floor = 3.145|0
 
@@ -295,7 +310,7 @@
           <section data-background="#fff">
             <h1>Handling bigger things</h1>
           </section>
-          <section>
+          <section data-background="#fff">
             <!-- <h1>Longer than a number?</h1> -->
             <p class="mono">
               00010101010101010101010101010101010100001010101010
@@ -336,30 +351,36 @@
           </section>
 
           <section>
-            <h4>u8 = new Uint8Array(48)</h4>
-            <h4>buffer = u8.buffer</h4>
 
-            <div data-buffer-view="buffer" class="mono"></div>
-
-            <h4>
-              todo:
-            </h4>
-            <ul>
+            <ul class="mono">
+              <li>u8 = new Uint8Array(48)</li>
+              <li>buffer = u8.buffer</li>
               <li>u8_2 = new Uint8Array(u8.buffer, 6, 6)</li>
               <li>u32 = new Uint32Array(u8.buffer)</li>
               <li>dv = new DataView(buffer)</li>
             </ul>
+            <div data-buffer-view="buffer" class="mono"></div>
 
           </section>
 
-          <section>
+          <!-- <section>
             <h1>memory impact</h1>
             <h3>[..]</h3>
+          </section> -->
+
+          <section>
+            <h1>Great for</h1>
+            <h3>Memory usage</h3>
+            <h3>Central state</h3>
+            <h3>Performance</h3>
+          </section>
+<!--
+          <section data-background="images/central-data.svg" data-background-cover="contain">
           </section>
 
           <section>
-            <h1>Updating multiple elements</h1>
-            <h3>[..]</h3>
+            <h3>[{a: 123, b: 542}, {a: 875, b: 1245}, …]</h3>
+            <h3>[123, 542, 875, 1245, …]</h3>
           </section>
 
           <section>
@@ -371,25 +392,25 @@
               <li>constrained memory</li>
               <li>tracking an object through a scene</li>
             </ul>
-          </section>
+          </section> -->
 
-          <section>
+          <!-- <section>
             <h1>Serialisation &amp; transfer</h1>
             <h2>protobuffers</h2>
             <h2>flatbuffers</h2>
-          </section>
+          </section> -->
 
           <section>
             <h1>/</h1>
-            <h2>Array Buffers</h2>
             <h2>Typed Arrays</h2>
+            <h2>Array Buffers</h2>
             <h2>DataViews</h2>
           </section>
         </section>
 
         <section>
           <section data-background="#fff">
-            <h1>Let's do some stuff</h1>
+            <h1>Accessing raw data</h1>
           </section>
         </section>
 
@@ -434,9 +455,9 @@
             </code></pre></h3>
           </section>
 
-          <section>
+          <!-- <section>
             <h1>[00101010101010101]</h1>
-          </section>
+          </section> -->
 
           <section>
             <pre style="margin:0"><code data-trim>
@@ -444,10 +465,15 @@
             </code></pre>
           </section>
 
+
+          <!-- TODO - have purposes for each slide -->
+
           <section class="image-data-code">
             <div class="img-row stretch">
               <img src="images/imagedata-joanie.jpg">
               <pre style="margin:.5em"><code data-trim contenteditable class="hljs javascript">
+                // setting components
+
                 const {data} = imageData
 
                 for(let i = 0; i < data.length; i += 4) {
@@ -458,6 +484,110 @@
               </code></pre>
             </div>
           </section>
+
+
+
+          <section class="image-data-code">
+            <div class="img-row stretch">
+              <img src="images/imagedata-joanie.jpg">
+              <pre style="margin:.5em"><code data-trim contenteditable class="hljs javascript">
+                // switching components
+
+                const {data} = imageData
+
+                for(let i = 0; i < data.length; i += 4) {
+                  data[i] =  255-data[i+2]
+                }
+
+                ctx.putImageData(imageData, 0, 0)
+              </code></pre>
+            </div>
+          </section>
+
+
+          <section class="image-data-code">
+            <div class="img-row stretch">
+              <img src="images/imagedata-joanie.jpg">
+              <pre style="margin:.5em"><code data-trim contenteditable class="hljs javascript">
+                // Using other functions
+
+                const {data} = imageData
+
+                for(let i = 0; i < data.length; i += 4) {
+                  data[i] = Math.sin(i/800000) * 255
+                }
+
+                ctx.putImageData(imageData, 0, 0)
+              </code></pre>
+            </div>
+          </section>
+
+
+          <section class="image-data-code">
+            <div class="img-row stretch">
+              <img src="images/imagedata-joanie.jpg">
+              <pre style="margin:.5em"><code data-trim contenteditable class="hljs javascript">
+                // Mashing stuff together
+
+                const {data} = imageData
+
+                for(let i = 0; i < data.length; i += 4) {
+                  data[i] = Math.cos(i/800000) * 255
+                  data[i+1] *= 1.8
+                  data[i+1] += Math.sin(i/10) * 200
+                }
+
+                ctx.putImageData(imageData, 0, 0)
+              </code></pre>
+            </div>
+          </section>
+
+          <section class="image-data-code">
+            <div class="img-row stretch">
+              <img src="images/imagedata-joanie.jpg">
+              <pre style="margin:.5em"><code data-trim contenteditable class="hljs javascript">
+                // Messing stuff up
+
+                const {data} = imageData
+
+                for(let i = 0; i < data.length; i += 4) {
+                  data[i] = data[i+2] *= data[i] ^ data[i+1]
+                }
+
+                ctx.putImageData(imageData, 0, 0)
+              </code></pre>
+            </div>
+          </section>
+
+
+
+
+
+
+
+
+
+
+          <section class="image-data-code">
+            <div class="img-row stretch">
+              <img src="images/imagedata-joanie.jpg">
+              <pre style="margin:.5em"><code data-trim contenteditable class="hljs javascript">
+                // Aligning to pixels
+
+                const data = new Uint32Array(
+                  imageData.data.buffer
+                )
+
+                // data.fill(0xffcc00ff)
+
+                // data.sort((a, b) => (a & 0xff) - (b & 0xff) )
+
+                ctx.putImageData(imageData, 0, 0)
+              </code></pre>
+            </div>
+          </section>
+
+
 
           <section class="image-data-code">
             <div class="img-row stretch">
@@ -472,16 +602,9 @@
                 const b = 0x00ff0000
                 const a = 0xff000000
 
-
                 for(let i = 0; i < data.length; i++) {
                   data[i] = data[i] & r | a
                 }
-
-                // data.fill(0xffcc00ff)
-
-                // const m = 0xff
-                //data.sort((a, b) => (a & m) - (b & m) )
-
 
                 ctx.putImageData(imageData, 0, 0)
               </code></pre>
@@ -512,7 +635,12 @@
           </section>
           <section>
             <h1>Web Audio</h1>
-            <h3>Graph</h3>
+          </section>
+          <section data-background="images/audio-graph.svg" data-background-fit="contain">
+          </section>
+          <section data-background="images/audio-graph-complex.svg" data-background-fit="contain">
+          </section>
+          <section data-background="images/audio-graph-complex-data.svg" data-background-fit="contain">
           </section>
           <section>
             <pre style="margin:0"><code data-trim class="hljs javascript">
@@ -528,17 +656,16 @@
 
           <section>
             <pre style="margin:0"><code data-trim class="hljs javascript">
-
               const timeData = new Uint8Array(analyser.fftSize)
               analyser.getByteTimeDomainData(timeData)
 
               var freqData = new Uint8Array(analyser.frequencyBinCount)
               analyser.getByteFrequencyData(freqData)
-
             </code></pre>
           </section>
 
           <section id="audio-time-data">
+            <h3>Analyser</h3>
             <h2>Time Domain Data</h2>
             <p><audio src="assets/bach.ogg" controls ></audio></p>
             <p class="mono output">[]</p>
@@ -568,19 +695,28 @@
           </section>
 
           <section id="audio-time-graph">
+            <h3>Analyser</h3>
             <h2>Time Domain Data</h2>
             <p><audio src="assets/bach.ogg" controls ></audio></p>
 
             <canvas width=1280 height=300></canvas>
           </section>
 
+          <section>
+            <h2><pre style="margin:0"><code data-trim class="hljs javascript">
+              analyser.getByteFrequencyData(freqData)
+            </code></pre></h2>
+          </section>
+
           <section id="audio-freq-data">
+            <h3>Analyser</h3>
             <h2>Frequency Data</h2>
             <p><audio src="assets/bach.ogg" controls ></audio></p>
             <p class="mono output">[]</p>
           </section>
 
           <section id="audio-freq-graph">
+            <h3>Analyser</h3>
             <h2>Frequency Data</h2>
             <p><audio src="assets/bach.ogg" controls ></audio></p>
 
@@ -593,7 +729,11 @@
           </section>
 
           <section>
+            <h4>Output</h4>
             <h1>BufferSourceNode</h1>
+
+            <h4>Input + Output</h4>
+            <h1>ScriptProcessor</h1>
           </section>
 
           <section>
@@ -608,15 +748,13 @@
             </code></pre>
           </section>
 
-          <section>
-            <pre style="margin:0"><code data-trim class="hljs javascript">
-            for(let t in channel_data)
-              channel_data[t] = -1…1
-            </code></pre>
-          </section>
 
           <section>
             <pre style="margin:0"><code data-trim class="hljs javascript">
+            for(let t in channel_data) {
+              channel_data[t] = -1…1
+            }
+
             const source = ctx.createBufferSource()
             source.buffer = audio_buffer
             source.connect(ctx.destination)
@@ -628,11 +766,68 @@
           <section class="audio-data-code">
             <h2><pre style="margin:0"><code data-trim class="hljs javascript" contenteditable>
               for(let t in channel_data)
-                channel_data[t] = Math.random()*2 -1
+                channel_data[t] = (Math.random() - .5) * .2
             </code></pre></h2>
             <p>
               <button>&rarr;</button>
             </p>
+          </section>
+
+          <section class="audio-data-code">
+            <h2><pre style="margin:0"><code data-trim class="hljs javascript" contenteditable>
+              for(let t in channel_data)
+                channel_data[t] = Math.sin(t / 30)
+            </code></pre></h2>
+            <p>
+              <button>&rarr;</button>
+            </p>
+          </section>
+
+
+          <section class="audio-data-code">
+            <h2><pre style="margin:0"><code data-trim class="hljs javascript" contenteditable>
+              for(let t in channel_data)
+                channel_data[t] =
+                  Math.sin(t/30) *
+                  Math.sin(t/channel_data.length * Math.PI)
+            </code></pre></h2>
+            <p>
+              <button>&rarr;</button>
+            </p>
+          </section>
+
+          <section class="audio-data-code">
+            <h2><pre style="margin:0"><code data-trim class="hljs javascript" contenteditable>
+              let f = Math.random() * 80
+              for(let t in channel_data)
+                channel_data[t] =
+                  Math.sin(t / f) *
+                  Math.sin(t / channel_data.length * Math.PI)
+            </code></pre></h2>
+            <p>
+              <button>&rarr;</button>
+            </p>
+          </section>
+
+          <section class="audio-data-code">
+            <h2><pre style="margin:0"><code data-trim class="hljs javascript" contenteditable>
+              let f = Math.random() * 80
+              for(let t in channel_data)
+                channel_data[t] =
+                  Math.sin(t / f) *
+                  Math.sin(t / f * 2) *
+                  Math.sin(t / f * 4) *
+                  Math.sin(t / channel_data.length * Math.PI)
+            </code></pre></h2>
+            <p>
+              <button>&rarr;</button>
+            </p>
+          </section>
+
+          <section>
+            <h1>/</h1>
+            <h2>WebAudio</h2>
+            <h2>Audio Graph, AnalyserNode, BufferSourceNode, ScriptProcessor</h2>
           </section>
 
 
@@ -651,7 +846,7 @@
             <h1>Frequency &rarr; Image?</h1>
           </section>
 
-          <section>
+          <!-- <section>
             <h2>Matching data?</h2>
             <h3>analyser.getByteFrequencyData()</h3>
             <h3>imageData.data</h3>
@@ -663,14 +858,18 @@
           </section>
 
           <section>
-            <h1>Not a perfect match, <br />but whatever</h1>
-          </section>
+            <h1>Not a perfect match<span class="fragment">, <br />but whatever</span></h1>
+          </section> -->
 
           <section>
             <h1>Do they fit?</h1>
           </section>
 
           <section data-background="images/audio-image-fit.svg"></section>
+
+          <!-- <section>
+            <h2>We can probably make them fit</h2>
+          </section> -->
 
           <section data-background="images/audio-image-fit-solution.svg"></section>
 
@@ -701,11 +900,20 @@
           </section>
 
           <section>
-            <h1>No processing!</h1>
+            <h2>spectrograph</h2>
           </section>
 
           <section>
-            <h1>1/ Density issues</h1>
+            <img src="images/spectrograph-src.png" class="stretch"/>
+          </section>
+
+          <section>
+            <h1>No processing!</h1>
+            <h3 class="fragment">Though maybe we could do with some</h3>
+          </section>
+
+          <section>
+            <h1>1/ Data Density</h1>
           </section>
 
           <section>
@@ -733,7 +941,6 @@
           <section data-background="images/color-mapping.svg"></section>
           <section data-background="images/color-mapping-2.svg"></section>
 
-
           <section>
             <pre style="margin:0"><code data-trim class="hljs javascript">
               const to_color = (v) => {
@@ -756,12 +963,11 @@
 
 
           <section>
-            <h1><pre style="margin:0"><code data-trim class="hljs javascript">
-              image32.set(
-                frequencies.map(to_color),
-                frequencies.length * idx
-              )
-            </code></pre></h1>
+            <h2><pre style="margin:0"><code data-trim class="hljs javascript">
+              frequencies.forEach((v,i) => {
+                image32[i + offset] = to_color(v)
+              })
+            </code></pre></h2>
           </section>
 
 
@@ -868,8 +1074,35 @@
 
           <section>
             <h1>/</h1>
+            <h2>Networked data</h2>
           </section>
 
+        </section>
+
+        <section>
+          <h1>Summary</h1>
+          <h3 class="fragment">Binary operators, Typed Arrays, ArrayBuffers</h3>
+          <h3 class="fragment">ImageData, AnalyserNode, Fourier transforms, BufferNode</h3>
+          <h3 class="fragment">Sharing Data, Fetch, WebSockets, Voice data</h3>
+        </section>
+
+        <!-- <section>
+          <h3>One last point</h3>
+          <h1>This isn't just for media</h1>
+          <h3><pre style="margin:0"><code data-trim class="hljs javascript">
+            {
+              component: "weather",
+              temp: new Uint8Array(source.buffer, 0, 50),
+              humid: new Uint8Array(source.buffer, 50, 0),
+            }
+          </code></pre></h3>
+        </section> -->
+
+        <section>
+          <h1>Thanks for listening</h1>
+          <h3>github.com/benfoxall/js-browser-bits</h3>
+          <h2>@benjaminbenben</h2>
+          <h2>Ben Foxall</h2>
         </section>
 
       </div>
